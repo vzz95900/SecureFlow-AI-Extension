@@ -1,0 +1,47 @@
+# FastAPI & Server
+fastapi>=0.115.0
+uvicorn[standard]>=0.34.0
+python-multipart>=0.0.18
+
+# NLP / NER
+spacy>=3.8.7
+
+# Regex (stdlib, no install needed)
+
+# ML / BERT Classifier
+transformers>=4.47.0
+torch>=2.5.0
+datasets>=3.2.0
+
+# OCR (optional — install separately if needed)
+# pytesseract>=0.3.13
+# paddleocr>=2.9.1
+# paddlepaddle>=3.0.0b1
+
+# PDF
+PyMuPDF>=1.25.0
+
+# Database
+sqlalchemy>=2.0.36
+aiosqlite>=0.20.0
+
+# Security & Middleware
+slowapi>=0.1.9
+python-dotenv>=1.0.1
+pydantic>=2.10.0
+pydantic-settings>=2.7.0
+
+# Testing
+pytest>=8.3.0
+pytest-asyncio>=0.24.0
+httpx>=0.28.0
+pytest-cov>=6.0.0
+
+# Linting
+ruff>=0.8.0
+mypy>=1.14.0
+
+# Additional
+scikit-learn>=1.5.0
+numpy>=1.26.0
+Pillow>=10.0.0

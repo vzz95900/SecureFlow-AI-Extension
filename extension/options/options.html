@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=600, initial-scale=1.0">
+    <title>SecureFlow AI — Settings</title>
+    <link rel="stylesheet" href="options.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="options-container">
+        <header class="options-header">
+            <h1>⚙️ SecureFlow AI Settings</h1>
+            <p class="subtitle">Configure your privacy shield</p>
+        </header>
+
+        <form id="settings-form">
+            <!-- Backend Connection -->
+            <section class="settings-group">
+                <h2>🔗 Backend Connection</h2>
+                <div class="field">
+                    <label for="backend-url">API Endpoint</label>
+                    <input type="url" id="backend-url" placeholder="http://localhost:8000"
+                        value="http://localhost:8000">
+                    <span class="hint">URL of your SecureFlow AI backend server</span>
+                </div>
+                <div class="field">
+                    <label for="api-key">API Key</label>
+                    <div class="input-group">
+                        <input type="password" id="api-key" placeholder="Enter your API key">
+                        <button type="button" class="btn-icon" id="toggle-key-visibility" title="Show/hide">
+                            👁️
+                        </button>
+                    </div>
+                    <span class="hint">Optional — required if backend has authentication enabled</span>
+                </div>
+                <div class="field">
+                    <button type="button" class="btn-secondary" id="btn-test-connection">Test Connection</button>
+                    <span class="connection-status" id="connection-status"></span>
+                </div>
+            </section>
+
+            <!-- Detection Settings -->
+            <section class="settings-group">
+                <h2>🛡️ Detection Settings</h2>
+                <div class="field">
+                    <label for="sensitivity">Default Sensitivity</label>
+                    <select id="sensitivity">
+                        <option value="low">Low — Only high-risk items (SSN, credit cards)</option>
+                        <option value="medium">Medium — Balanced detection (recommended)</option>
+                        <option value="high" selected>High — Maximum protection (more false positives)</option>
+                    </select>
+                </div>
+                <div class="field toggle-field">
+                    <label for="auto-mode">Auto-mode</label>
+                    <label class="toggle">
+                        <input type="checkbox" id="auto-mode" checked>
+                        <span class="slider"></span>
+                    </label>
+                    <span class="hint">Automatically sanitize without confirmation</span>
+                </div>
+            </section>
+
+            <!-- Supported Sites -->
+            <section class="settings-group">
+                <h2>🌐 Supported Sites</h2>
+                <div class="site-grid">
+                    <label class="site-toggle">
+                        <input type="checkbox" checked data-site="chatgpt">
+                        <span class="site-name">ChatGPT</span>
+                    </label>
+                    <label class="site-toggle">
+                        <input type="checkbox" checked data-site="claude">
+                        <span class="site-name">Claude</span>
+                    </label>
+                    <label class="site-toggle">
+                        <input type="checkbox" checked data-site="gemini">
+                        <span class="site-name">Gemini</span>
+                    </label>
+                    <label class="site-toggle">
+                        <input type="checkbox" checked data-site="copilot">
+                        <span class="site-name">Copilot</span>
+                    </label>
+                    <label class="site-toggle">
+                        <input type="checkbox" checked data-site="perplexity">
+                        <span class="site-name">Perplexity</span>
+                    </label>
+                    <label class="site-toggle">
+                        <input type="checkbox" checked data-site="deepseek">
+                        <span class="site-name">DeepSeek</span>
+                    </label>
+                    <label class="site-toggle">
+                        <input type="checkbox" checked data-site="huggingchat">
+                        <span class="site-name">HuggingChat</span>
+                    </label>
+                </div>
+            </section>
+
+            <!-- Data & Privacy -->
+            <section class="settings-group">
+                <h2>🔐 Data & Privacy</h2>
+                <div class="field toggle-field">
+                    <label for="audit-log">Keep Audit Log</label>
+                    <label class="toggle">
+                        <input type="checkbox" id="audit-log" checked>
+                        <span class="slider"></span>
+                    </label>
+                    <span class="hint">Store redaction history locally for review</span>
+                </div>
+                <div class="field">
+                    <button type="button" class="btn-danger" id="btn-clear-data">Clear All Data</button>
+                    <span class="hint">Permanently delete all stored sessions and statistics</span>
+                </div>
+            </section>
+
+            <!-- Save -->
+            <div class="save-bar">
+                <button type="submit" class="btn-primary" id="btn-save">Save Settings</button>
+                <span class="save-status" id="save-status"></span>
+            </div>
+        </form>
+    </div>
+
+    <script src="options.js"></script>
+</body>
+
+</html>

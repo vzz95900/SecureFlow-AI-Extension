@@ -1,0 +1,239 @@
+[
+    {
+        "text": "My name is Rahul Sharma and my Aadhaar number is 4567 8901 2345.",
+        "expected_pii": [
+            {
+                "text": "Rahul Sharma",
+                "type": "PERSON"
+            },
+            {
+                "text": "4567 8901 2345",
+                "type": "AADHAAR"
+            }
+        ]
+    },
+    {
+        "text": "Please verify PAN card ABCPD1234E for Priya Patel.",
+        "expected_pii": [
+            {
+                "text": "ABCPD1234E",
+                "type": "PAN"
+            },
+            {
+                "text": "Priya Patel",
+                "type": "PERSON"
+            }
+        ]
+    },
+    {
+        "text": "Call me at +91 98765 43210 or email me at vikram.singh@gmail.com.",
+        "expected_pii": [
+            {
+                "text": "+91 98765 43210",
+                "type": "PHONE"
+            },
+            {
+                "text": "vikram.singh@gmail.com",
+                "type": "EMAIL"
+            }
+        ]
+    },
+    {
+        "text": "Transfer Rs. 50000 to IFSC SBIN0001234, account 12345678901234.",
+        "expected_pii": [
+            {
+                "text": "SBIN0001234",
+                "type": "IFSC"
+            },
+            {
+                "text": "12345678901234",
+                "type": "BANK_ACCOUNT"
+            }
+        ]
+    },
+    {
+        "text": "Pay via UPI to anil.kumar@paytm for the order.",
+        "expected_pii": [
+            {
+                "text": "anil.kumar@paytm",
+                "type": "UPI_ID"
+            }
+        ]
+    },
+    {
+        "text": "Patient Meera Devi, UHID #12345678, DOB 15/08/1990, blood group B+.",
+        "expected_pii": [
+            {
+                "text": "Meera Devi",
+                "type": "PERSON"
+            },
+            {
+                "text": "UHID #12345678",
+                "type": "MEDICAL_RECORD"
+            },
+            {
+                "text": "15/08/1990",
+                "type": "DOB"
+            }
+        ]
+    },
+    {
+        "text": "My passport number is J8369854 and voter ID is ABC1234567.",
+        "expected_pii": [
+            {
+                "text": "J8369854",
+                "type": "PASSPORT"
+            },
+            {
+                "text": "ABC1234567",
+                "type": "VOTER_ID"
+            }
+        ]
+    },
+    {
+        "text": "Driving licence DL-01-20190012345 issued to Amit Verma.",
+        "expected_pii": [
+            {
+                "text": "DL-01-20190012345",
+                "type": "DRIVING_LICENCE"
+            },
+            {
+                "text": "Amit Verma",
+                "type": "PERSON"
+            }
+        ]
+    },
+    {
+        "text": "GSTIN 22AAAAA0000A1Z5 registered to Sunshine Enterprises LLP.",
+        "expected_pii": [
+            {
+                "text": "22AAAAA0000A1Z5",
+                "type": "GSTIN"
+            }
+        ]
+    },
+    {
+        "text": "The monsoon is expected to arrive in Kerala by June first week.",
+        "expected_pii": []
+    },
+    {
+        "text": "Reach Sanjay Gupta at sanjay.gupta@infosys.com or 080-2345-6789.",
+        "expected_pii": [
+            {
+                "text": "Sanjay Gupta",
+                "type": "PERSON"
+            },
+            {
+                "text": "sanjay.gupta@infosys.com",
+                "type": "EMAIL"
+            }
+        ]
+    },
+    {
+        "text": "Aadhaar 9876 5432 1098, PAN BXYPK5678L for KYC verification of Sunita Rao.",
+        "expected_pii": [
+            {
+                "text": "9876 5432 1098",
+                "type": "AADHAAR"
+            },
+            {
+                "text": "BXYPK5678L",
+                "type": "PAN"
+            },
+            {
+                "text": "Sunita Rao",
+                "type": "PERSON"
+            }
+        ]
+    },
+    {
+        "text": "Credit card 4111111111111111 used at Flipkart on 12/01/2024.",
+        "expected_pii": [
+            {
+                "text": "4111111111111111",
+                "type": "CREDIT_CARD"
+            }
+        ]
+    },
+    {
+        "text": "Namma Metro Phase 2 will connect Whitefield to Kempegowda International Airport.",
+        "expected_pii": []
+    },
+    {
+        "text": "Server at 192.168.10.42 is running the staging deployment.",
+        "expected_pii": [
+            {
+                "text": "192.168.10.42",
+                "type": "IP_ADDRESS"
+            }
+        ]
+    },
+    {
+        "text": "Deepak Joshi, mobile 7890123456, UPI deepak@ybl, applied for home loan.",
+        "expected_pii": [
+            {
+                "text": "Deepak Joshi",
+                "type": "PERSON"
+            },
+            {
+                "text": "7890123456",
+                "type": "PHONE"
+            },
+            {
+                "text": "deepak@ybl",
+                "type": "UPI_ID"
+            }
+        ]
+    },
+    {
+        "text": "Policy holder Kavita Nair, DOB 22/03/1985, PAN CQRPN4567M, Aadhaar 3456 7890 1234.",
+        "expected_pii": [
+            {
+                "text": "Kavita Nair",
+                "type": "PERSON"
+            },
+            {
+                "text": "22/03/1985",
+                "type": "DOB"
+            },
+            {
+                "text": "CQRPN4567M",
+                "type": "PAN"
+            },
+            {
+                "text": "3456 7890 1234",
+                "type": "AADHAAR"
+            }
+        ]
+    },
+    {
+        "text": "India's GDP grew by 7.2% in FY 2024-25 as per RBI estimates.",
+        "expected_pii": []
+    },
+    {
+        "text": "Send documents to neha.mishra@wipro.com, voter ID DEF7654321, for verification.",
+        "expected_pii": [
+            {
+                "text": "neha.mishra@wipro.com",
+                "type": "EMAIL"
+            },
+            {
+                "text": "DEF7654321",
+                "type": "VOTER_ID"
+            }
+        ]
+    },
+    {
+        "text": "Rohan Mehta, passport K2345678, flying Delhi to Mumbai on Air India AI-101.",
+        "expected_pii": [
+            {
+                "text": "Rohan Mehta",
+                "type": "PERSON"
+            },
+            {
+                "text": "K2345678",
+                "type": "PASSPORT"
+            }
+        ]
+    }
+]

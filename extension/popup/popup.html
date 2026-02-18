@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=400, initial-scale=1.0">
+  <title>SecureFlow AI</title>
+  <link rel="stylesheet" href="popup.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="popup-container">
+    <!-- Header -->
+    <header class="popup-header">
+      <div class="brand">
+        <div class="logo-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <circle cx="14" cy="14" r="13" stroke="url(#g1)" stroke-width="2"/>
+            <path d="M14 6 L18 12 L14 22 L10 12 Z" fill="url(#g2)" opacity="0.9"/>
+            <defs>
+              <linearGradient id="g1" x1="0" y1="0" x2="28" y2="28">
+                <stop offset="0%" stop-color="#6366f1"/>
+                <stop offset="100%" stop-color="#06b6d4"/>
+              </linearGradient>
+              <linearGradient id="g2" x1="10" y1="6" x2="18" y2="22">
+                <stop offset="0%" stop-color="#818cf8"/>
+                <stop offset="100%" stop-color="#22d3ee"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div>
+          <h1>SecureFlow AI</h1>
+          <span class="tagline">Privacy Shield Active</span>
+        </div>
+      </div>
+      <div class="toggle-wrapper">
+        <label class="toggle" id="toggle-label">
+          <input type="checkbox" id="toggle-switch" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+    </header>
+
+    <!-- Status Card -->
+    <section class="status-card" id="status-card">
+      <div class="status-indicator">
+        <div class="pulse-ring" id="pulse-ring"></div>
+        <div class="pulse-dot" id="pulse-dot"></div>
+      </div>
+      <div class="status-text">
+        <span class="status-label" id="status-label">Protection Active</span>
+        <span class="status-site" id="status-site">Monitoring LLM interactions</span>
+      </div>
+    </section>
+
+    <!-- Stats Grid -->
+    <section class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-value" id="stat-prompts">0</div>
+        <div class="stat-label">Prompts Scanned</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="stat-entities">0</div>
+        <div class="stat-label">Items Redacted</div>
+      </div>
+      <div class="stat-card risk-card" id="risk-card">
+        <div class="stat-value" id="stat-risk">—</div>
+        <div class="stat-label">Risk Level</div>
+      </div>
+    </section>
+
+    <!-- Sensitivity Selector -->
+    <section class="sensitivity-section">
+      <label class="section-label">Sensitivity Level</label>
+      <div class="sensitivity-pills">
+        <button class="pill" data-level="low">Low</button>
+        <button class="pill active" data-level="medium">Medium</button>
+        <button class="pill" data-level="high">High</button>
+      </div>
+    </section>
+
+    <!-- Quick Actions -->
+    <section class="actions">
+      <button class="action-btn" id="btn-dashboard">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>
+        Dashboard
+      </button>
+      <button class="action-btn" id="btn-options">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        Settings
+      </button>
+    </section>
+
+    <!-- Footer -->
+    <footer class="popup-footer">
+      <span>v1.0.0</span>
+      <span>·</span>
+      <a href="https://github.com" target="_blank">Docs</a>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

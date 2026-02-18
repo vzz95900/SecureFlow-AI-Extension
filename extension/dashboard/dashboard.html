@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureFlow AI — Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+</head>
+
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                    <circle cx="14" cy="14" r="13" stroke="url(#sg1)" stroke-width="2" />
+                    <path d="M14 6 L18 12 L14 22 L10 12 Z" fill="url(#sg2)" opacity="0.9" />
+                    <defs>
+                        <linearGradient id="sg1" x1="0" y1="0" x2="28" y2="28">
+                            <stop offset="0%" stop-color="#6366f1" />
+                            <stop offset="100%" stop-color="#06b6d4" />
+                        </linearGradient>
+                        <linearGradient id="sg2" x1="10" y1="6" x2="18" y2="22">
+                            <stop offset="0%" stop-color="#818cf8" />
+                            <stop offset="100%" stop-color="#22d3ee" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span>SecureFlow AI</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active" data-section="overview">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <rect x="3" y="3" width="7" height="9" rx="1" />
+                        <rect x="14" y="3" width="7" height="5" rx="1" />
+                        <rect x="14" y="12" width="7" height="9" rx="1" />
+                        <rect x="3" y="16" width="7" height="5" rx="1" />
+                    </svg>
+                    Overview
+                </a>
+                <a href="#" class="nav-item" data-section="history">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" />
+                        <polyline points="12 6 12 12 16 14" />
+                    </svg>
+                    Session History
+                </a>
+                <a href="#" class="nav-item" data-section="entities">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M12 20V10M6 20V4M18 20V16" />
+                    </svg>
+                    Entity Breakdown
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="top-bar">
+                <h2 id="page-title">Overview</h2>
+                <div class="top-actions">
+                    <button class="btn-outline" id="btn-export">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
+                        </svg>
+                        Export CSV
+                    </button>
+                    <button class="btn-outline" id="btn-refresh">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <polyline points="23 4 23 10 17 10" />
+                            <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10" />
+                        </svg>
+                        Refresh
+                    </button>
+                </div>
+            </header>
+
+            <!-- Overview Section -->
+            <section class="section" id="section-overview">
+                <!-- Summary Cards -->
+                <div class="summary-grid">
+                    <div class="summary-card">
+                        <div class="summary-icon blue">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
+                                viewBox="0 0 24 24">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                            </svg>
+                        </div>
+                        <div class="summary-data">
+                            <span class="summary-value" id="total-prompts">0</span>
+                            <span class="summary-label">Total Prompts</span>
+                        </div>
+                    </div>
+                    <div class="summary-card">
+                        <div class="summary-icon purple">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
+                                viewBox="0 0 24 24">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            </svg>
+                        </div>
+                        <div class="summary-data">
+                            <span class="summary-value" id="total-entities">0</span>
+                            <span class="summary-label">Entities Redacted</span>
+                        </div>
+                    </div>
+                    <div class="summary-card">
+                        <div class="summary-icon green">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
+                                viewBox="0 0 24 24">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22 4 12 14.01 9 11.01" />
+                            </svg>
+                        </div>
+                        <div class="summary-data">
+                            <span class="summary-value" id="protection-rate">100%</span>
+                            <span class="summary-label">Protection Rate</span>
+                        </div>
+                    </div>
+                    <div class="summary-card">
+                        <div class="summary-icon amber">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+                                <line x1="12" y1="9" x2="12" y2="13" />
+                                <line x1="12" y1="17" x2="12.01" y2="17" />
+                            </svg>
+                        </div>
+                        <div class="summary-data">
+                            <span class="summary-value" id="high-risk-count">0</span>
+                            <span class="summary-label">High Risk Items</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts Row -->
+                <div class="charts-row">
+                    <div class="card chart-card">
+                        <h3 class="card-title">Risk Distribution</h3>
+                        <div class="chart-container">
+                            <canvas id="risk-chart"></canvas>
+                        </div>
+                    </div>
+                    <div class="card chart-card">
+                        <h3 class="card-title">Activity Trend</h3>
+                        <div class="chart-container">
+                            <canvas id="trend-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="card">
+                    <h3 class="card-title">Recent Activity</h3>
+                    <div class="table-wrapper">
+                        <table class="data-table" id="recent-table">
+                            <thead>
+                                <tr>
+                                    <th>Time</th>
+                                    <th>Session</th>
+                                    <th>Entities</th>
+                                    <th>Risk</th>
+                                </tr>
+                            </thead>
+                            <tbody id="recent-tbody">
+                                <tr class="empty-row">
+                                    <td colspan="4">No activity yet. Start chatting with an LLM!</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- History Section (hidden by default) -->
+            <section class="section hidden" id="section-history">
+                <div class="card">
+                    <h3 class="card-title">Full Session History</h3>
+                    <div class="table-wrapper">
+                        <table class="data-table" id="history-table">
+                            <thead>
+                                <tr>
+                                    <th>Date & Time</th>
+                                    <th>Session ID</th>
+                                    <th>Entities Found</th>
+                                    <th>Risk Level</th>
+                                    <th>Details</th>
+                                </tr>
+                            </thead>
+                            <tbody id="history-tbody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Entity Breakdown Section (hidden by default) -->
+            <section class="section hidden" id="section-entities">
+                <div class="card chart-card-wide">
+                    <h3 class="card-title">Entity Type Breakdown</h3>
+                    <div class="chart-container-wide">
+                        <canvas id="entity-chart"></canvas>
+                    </div>
+                </div>
+                <div class="card" style="margin-top:20px">
+                    <h3 class="card-title">Detailed Breakdown</h3>
+                    <div class="entity-bars" id="entity-bars">
+                        <p class="muted">No entity data available yet.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+
+</html>

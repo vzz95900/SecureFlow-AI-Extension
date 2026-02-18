@@ -1,0 +1,58 @@
+{
+    "manifest_version": 3,
+    "name": "SecureFlow AI",
+    "version": "1.1.0",
+    "description": "Privacy-preserving proxy for LLM interactions — sanitizes PII before it reaches the AI.",
+    "permissions": [
+        "activeTab",
+        "storage",
+        "scripting"
+    ],
+    "host_permissions": [
+        "http://localhost:8000/*",
+        "http://127.0.0.1:8000/*",
+        "https://chat.openai.com/*",
+        "https://chatgpt.com/*",
+        "https://claude.ai/*",
+        "https://gemini.google.com/*",
+        "https://copilot.microsoft.com/*",
+        "https://www.perplexity.ai/*",
+        "https://chat.deepseek.com/*",
+        "https://huggingface.co/chat/*"
+    ],
+    "background": {
+        "service_worker": "background/service-worker.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://chat.openai.com/*",
+                "https://chatgpt.com/*",
+                "https://claude.ai/*",
+                "https://gemini.google.com/*",
+                "https://copilot.microsoft.com/*",
+                "https://www.perplexity.ai/*",
+                "https://chat.deepseek.com/*",
+                "https://huggingface.co/chat/*"
+            ],
+            "js": [
+                "content/content.js"
+            ],
+            "run_at": "document_idle"
+        }
+    ],
+    "action": {
+        "default_popup": "popup/popup.html",
+        "default_icon": {
+            "16": "icons/icon16.png",
+            "48": "icons/icon48.png",
+            "128": "icons/icon128.png"
+        }
+    },
+    "icons": {
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+    },
+    "options_page": "options/options.html"
+}

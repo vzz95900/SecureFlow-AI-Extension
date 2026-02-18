@@ -1,0 +1,20 @@
+{"text": "Aadhaar number is 4567 8901 2345, very sensitive government ID.", "label": "HIGH"}
+{"text": "PAN card ABCPD1234E is required for income tax filing.", "label": "HIGH"}
+{"text": "Call Rahul at +91 98765 43210 for the delivery update.", "label": "MEDIUM"}
+{"text": "Email invoice to priya.shah@company.in for processing.", "label": "MEDIUM"}
+{"text": "IFSC code SBIN0001234 and account 1234567890123.", "label": "HIGH"}
+{"text": "Pay via UPI at anil.kumar@paytm for Rs. 500.", "label": "MEDIUM"}
+{"text": "Indian passport J8369854 issued in New Delhi.", "label": "HIGH"}
+{"text": "Voter ID ABC1234567 verified for election rolls.", "label": "HIGH"}
+{"text": "Driving licence DL-01-20190012345 for Amit Verma.", "label": "HIGH"}
+{"text": "GSTIN 22AAAAA0000A1Z5 for Sunshine Enterprises.", "label": "MEDIUM"}
+{"text": "Patient UHID #12345678 admitted for cardiac evaluation.", "label": "HIGH"}
+{"text": "Date of birth 15/08/1990 is mandatory for KYC.", "label": "HIGH"}
+{"text": "Credit card 4111111111111111 charged Rs. 2500 at Amazon.in.", "label": "HIGH"}
+{"text": "Server IP 10.0.0.42 is the staging environment.", "label": "LOW"}
+{"text": "India's space program is managed by ISRO in Bengaluru.", "label": "LOW"}
+{"text": "PAN CQRPN4567M and Aadhaar 3456 7890 1234 for loan processing.", "label": "HIGH"}
+{"text": "Customer Kavita Nair's mobile 7890123456, UPI kavita@ybl.", "label": "MEDIUM"}
+{"text": "Mumbai weather forecast says heavy rains expected next week.", "label": "LOW"}
+{"text": "ABHA number 12-3456-7890-1234 linked to health insurance.", "label": "HIGH"}
+{"text": "Send ration card MH/12/12345678 copy for subsidy enrolment.", "label": "MEDIUM"}
