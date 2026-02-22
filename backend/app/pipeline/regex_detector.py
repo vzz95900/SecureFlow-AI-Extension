@@ -1,6 +1,7 @@
 """
 SecureFlow AI — Regex-Based PII Detector.
 Matches patterns from data/regex_patterns.json against input text.
+Includes priority-based overlap resolution to prevent misclassification.
 """
 
 from __future__ import annotations
@@ -46,6 +47,49 @@ SENSITIVITY_RISK_MAP = {
     "high":   {"HIGH", "MEDIUM", "LOW"},
 }
 
+# Priority for overlap resolution: lower number = higher priority
+# If not specified in the JSON, patterns default to priority 50
+_DEFAULT_PRIORITY = 50
+
+
+def _resolve_overlaps(entities: list[DetectedEntity]) -> list[DetectedEntity]:
+    """
+    Resolve overlapping matches from multiple regex patterns.
+
+    When two matches overlap, keep the one with:
+      1. Lower priority number (higher importance — e.g., PHONE=5 beats AADHAAR=10)
+      2. Longer span (more specific match)
+      3. Higher risk level
+    """
+    if not entities:
+        return []
+
+    risk_order = {"HIGH": 3, "MEDIUM": 2, "LOW": 1}
+
+    # Sort by start, then by priority (ascending), then by span length (descending)
+    entities.sort(key=lambda e: (
+        e.start,
+        getattr(e, '_priority', _DEFAULT_PRIORITY),
+        -(e.end - e.start),
+        -risk_order.get(e.risk, 0),
+    ))
+
+    resolved: list[DetectedEntity] = []
+    last_end = -1
+
+    for entity in entities:
+        if entity.start >= last_end:
+            resolved.append(entity)
+            last_end = entity.end
+        else:
+            # Overlap detected — the earlier entity was already added and
+            # has higher priority (or was longer / higher risk), so skip this one.
+            logger.debug(
+                f"Overlap resolved: kept previous, skipped {entity.type}={entity.text!r}"
+            )
+
+    return resolved
+
 
 async def detect(text: str, sensitivity: str = "high") -> list[DetectedEntity]:
     """
@@ -63,7 +107,10 @@ async def detect(text: str, sensitivity: str = "high") -> list[DetectedEntity]:
 
     entities: list[DetectedEntity] = []
 
-    for rule in patterns:
+    # Sort patterns by priority (most important first)
+    sorted_patterns = sorted(patterns, key=lambda r: r.get("priority", _DEFAULT_PRIORITY))
+
+    for rule in sorted_patterns:
         risk = rule.get("risk", "HIGH")
         if risk not in allowed_risks:
             continue
@@ -79,14 +126,23 @@ async def detect(text: str, sensitivity: str = "high") -> list[DetectedEntity]:
             continue
 
         for match in compiled.finditer(text):
-            entities.append(DetectedEntity(
+            entity = DetectedEntity(
                 start=match.start(),
                 end=match.end(),
                 type=rule.get("label", rule.get("name", "UNKNOWN")).upper(),
                 text=match.group(),
                 risk=risk,
                 source="regex",
-            ))
+            )
+            # Attach priority as internal attribute for overlap resolution
+            entity._priority = rule.get("priority", _DEFAULT_PRIORITY)
+            entities.append(entity)
 
-    logger.debug(f"Regex detected {len(entities)} entities at sensitivity={sensitivity}")
-    return entities
+    # Resolve overlapping detections (e.g., same digits matched as PHONE and AADHAAR)
+    resolved = _resolve_overlaps(entities)
+
+    logger.debug(
+        f"Regex detected {len(entities)} raw matches, "
+        f"resolved to {len(resolved)} entities at sensitivity={sensitivity}"
+    )
+    return resolved
