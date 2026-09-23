@@ -1,11 +1,12 @@
 """
-SecureFlow AI — Privacy Leakage Evaluation Benchmark.
+SecureFlow AI — Entity-Level Evaluation Benchmark.
 
-Measures how well the pipeline detects and redacts PII from test prompts.
+Computes precision, recall, and F1 per entity type using exact-match
+and partial-match evaluation on a labeled test set.
 
 Usage:
     cd backend
-    python scripts/evaluate.py --dataset data/eval_set.json --threshold 0.08 --report
+    python scripts/evaluate.py --dataset data/eval_set_300.json --verbose --report
 """
 
 import argparse
@@ -22,24 +23,33 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s | %(message)s")
 logger = logging.getLogger(__name__)
 
 
+def _normalize(text: str) -> str:
+    """Normalize text for matching (strip, lowercase, collapse whitespace)."""
+    return " ".join(text.strip().lower().split())
+
+
+def _texts_match(predicted: str, expected: str) -> bool:
+    """Check if predicted text matches expected (exact after normalization)."""
+    return _normalize(predicted) == _normalize(expected)
+
+
+def _texts_overlap(pred_text: str, exp_text: str, full_text: str) -> bool:
+    """Check if predicted and expected texts overlap in the original string."""
+    p = _normalize(pred_text)
+    e = _normalize(exp_text)
+    return p in e or e in p
+
+
 async def evaluate(dataset_path: str, threshold: float = 0.08, verbose: bool = False):
     """
-    Run the sanitization pipeline on test prompts and measure leakage.
+    Run the sanitization pipeline on test prompts and compute P/R/F1.
 
-    Dataset format (JSON):
-    [
-        {
-            "text": "My name is Alice and my SSN is 123-45-6789",
-            "expected_pii": [
-                {"text": "Alice", "type": "PERSON"},
-                {"text": "123-45-6789", "type": "SSN"}
-            ]
-        },
-        ...
-    ]
+    Uses entity-level evaluation:
+    - True Positive: expected entity matched by a detection (same type + text overlap)
+    - False Negative: expected entity NOT matched by any detection
+    - False Positive: detected entity NOT matching any expected entity
     """
     from app.pipeline.orchestrator import detect_all
-    from app.pipeline.redactor import redact
 
     # ── Load dataset ──────────────────────────────────────────
     with open(dataset_path, "r", encoding="utf-8") as f:
@@ -47,12 +57,18 @@ async def evaluate(dataset_path: str, threshold: float = 0.08, verbose: bool = F
 
     logger.info(f"Loaded {len(dataset)} test cases from {dataset_path}")
 
-    # ── Metrics ───────────────────────────────────────────────
-    total_pii = 0
-    detected_pii = 0
-    missed_pii = 0
-    false_positives = 0
-    results_by_type = defaultdict(lambda: {"total": 0, "detected": 0, "missed": 0})
+    # ── Per-type counters ─────────────────────────────────────
+    tp_by_type = defaultdict(int)   # true positives
+    fp_by_type = defaultdict(int)   # false positives
+    fn_by_type = defaultdict(int)   # false negatives
+
+    # Map of NER output types → expected types for type matching
+    TYPE_ALIASES = {
+        "LOCATION": "LOCATION", "GPE": "LOCATION",
+        "NUMBER": "NUMBER", "CARDINAL": "NUMBER",
+    }
+
+    all_types = set()
 
     # ── Run pipeline on each test case ────────────────────────
     for i, case in enumerate(dataset):
@@ -62,90 +78,139 @@ async def evaluate(dataset_path: str, threshold: float = 0.08, verbose: bool = F
         # Run detection
         entities, risk_level, summary = await detect_all(text, sensitivity="high")
 
-        # Redact
-        sanitized, _ = redact(text, entities)
+        # Track expected types
+        for e in expected:
+            all_types.add(e["type"])
 
-        # Check each expected PII
-        for pii_item in expected:
-            pii_text = pii_item["text"]
-            pii_type = pii_item.get("type", "UNKNOWN")
-            total_pii += 1
-            results_by_type[pii_type]["total"] += 1
+        # Build matched sets
+        matched_expected = set()   # indices of matched expected
+        matched_predicted = set()  # indices of matched predicted
 
-            if pii_text in sanitized:
-                # PII leaked through!
-                missed_pii += 1
-                results_by_type[pii_type]["missed"] += 1
+        # Match predicted → expected
+        for pi, pred in enumerate(entities):
+            pred_type = TYPE_ALIASES.get(pred.type, pred.type)
+
+            for ei, exp in enumerate(expected):
+                if ei in matched_expected:
+                    continue
+                exp_type = TYPE_ALIASES.get(exp["type"], exp["type"])
+
+                if pred_type == exp_type and _texts_overlap(pred.text, exp["text"], text):
+                    matched_expected.add(ei)
+                    matched_predicted.add(pi)
+                    tp_by_type[exp["type"]] += 1
+                    break
+
+        # False negatives: expected but not matched
+        for ei, exp in enumerate(expected):
+            if ei not in matched_expected:
+                fn_by_type[exp["type"]] += 1
                 if verbose:
                     logger.warning(
-                        f"  LEAK [{pii_type}] '{pii_text}' — case #{i+1}"
+                        f"  FN [{exp['type']}] '{exp['text']}' — case #{i+1}"
                     )
-            else:
-                detected_pii += 1
-                results_by_type[pii_type]["detected"] += 1
 
-        # Count false positives (detected entities not in expected list)
-        expected_texts = {p["text"].lower() for p in expected}
-        for entity in entities:
-            if entity.text.lower() not in expected_texts:
-                false_positives += 1
+        # False positives: predicted but not matched to any expected
+        for pi, pred in enumerate(entities):
+            if pi not in matched_predicted:
+                pred_type = TYPE_ALIASES.get(pred.type, pred.type)
+                fp_by_type[pred_type] += 1
+                if verbose:
+                    logger.info(
+                        f"  FP [{pred_type}] '{pred.text}' — case #{i+1}"
+                    )
 
-    # ── Calculate metrics ─────────────────────────────────────
-    leakage_rate = missed_pii / total_pii if total_pii > 0 else 0.0
-    detection_rate = detected_pii / total_pii if total_pii > 0 else 1.0
-    fp_rate = false_positives / (detected_pii + false_positives) if (detected_pii + false_positives) > 0 else 0.0
+    # ── Compute metrics ───────────────────────────────────────
+    all_types.update(tp_by_type.keys())
+    all_types.update(fp_by_type.keys())
+    all_types.update(fn_by_type.keys())
 
-    passed = leakage_rate <= threshold
+    per_type_metrics = {}
+    for t in sorted(all_types):
+        tp = tp_by_type[t]
+        fp = fp_by_type[t]
+        fn = fn_by_type[t]
+        precision = tp / (tp + fp) if (tp + fp) > 0 else 0.0
+        recall = tp / (tp + fn) if (tp + fn) > 0 else 0.0
+        f1 = 2 * precision * recall / (precision + recall) if (precision + recall) > 0 else 0.0
+        per_type_metrics[t] = {
+            "tp": tp, "fp": fp, "fn": fn,
+            "precision": round(precision, 4),
+            "recall": round(recall, 4),
+            "f1": round(f1, 4),
+            "support": tp + fn,
+        }
+
+    # Micro-averaged
+    total_tp = sum(tp_by_type.values())
+    total_fp = sum(fp_by_type.values())
+    total_fn = sum(fn_by_type.values())
+    micro_p = total_tp / (total_tp + total_fp) if (total_tp + total_fp) > 0 else 0.0
+    micro_r = total_tp / (total_tp + total_fn) if (total_tp + total_fn) > 0 else 0.0
+    micro_f1 = 2 * micro_p * micro_r / (micro_p + micro_r) if (micro_p + micro_r) > 0 else 0.0
+
+    # Macro-averaged
+    type_count = len(per_type_metrics)
+    macro_p = sum(m["precision"] for m in per_type_metrics.values()) / type_count if type_count else 0
+    macro_r = sum(m["recall"] for m in per_type_metrics.values()) / type_count if type_count else 0
+    macro_f1 = sum(m["f1"] for m in per_type_metrics.values()) / type_count if type_count else 0
+
+    passed = micro_r >= (1 - threshold)  # e.g., 92%+ recall
 
     # ── Report ────────────────────────────────────────────────
     logger.info("")
-    logger.info("=" * 60)
-    logger.info("  SecureFlow AI — Privacy Leakage Benchmark Results")
-    logger.info("=" * 60)
+    logger.info("=" * 78)
+    logger.info("  SecureFlow AI — Entity-Level Evaluation Results")
+    logger.info("=" * 78)
+    logger.info(f"  Dataset          : {dataset_path}")
     logger.info(f"  Test cases       : {len(dataset)}")
-    logger.info(f"  Total PII items  : {total_pii}")
-    logger.info(f"  Detected         : {detected_pii}")
-    logger.info(f"  Missed (leaked)  : {missed_pii}")
-    logger.info(f"  False positives  : {false_positives}")
-    logger.info("-" * 60)
-    logger.info(f"  Detection rate   : {detection_rate:.1%}")
-    logger.info(f"  Leakage rate     : {leakage_rate:.1%}  (threshold: ≤{threshold:.0%})")
-    logger.info(f"  False positive   : {fp_rate:.1%}")
-    logger.info("-" * 60)
-    logger.info(f"  Result           : {'✅ PASS' if passed else '❌ FAIL'}")
-    logger.info("=" * 60)
+    neg = sum(1 for c in dataset if not c.get("expected_pii"))
+    logger.info(f"  Negative cases   : {neg}")
+    logger.info(f"  Total expected   : {total_tp + total_fn}")
+    logger.info(f"  Total predicted  : {total_tp + total_fp}")
+    logger.info("-" * 78)
+    logger.info(f"  {'Type':<20} {'Prec':>7} {'Rec':>7} {'F1':>7} {'TP':>5} {'FP':>5} {'FN':>5} {'Sup':>5}")
+    logger.info("  " + "-" * 70)
 
-    # Per-type breakdown
-    if results_by_type:
-        logger.info("")
-        logger.info("  Per-type breakdown:")
-        logger.info(f"  {'Type':<20} {'Total':>6} {'Detected':>10} {'Missed':>8} {'Rate':>8}")
-        logger.info("  " + "-" * 54)
-        for pii_type in sorted(results_by_type.keys()):
-            stats = results_by_type[pii_type]
-            rate = stats["detected"] / stats["total"] if stats["total"] > 0 else 0
-            logger.info(
-                f"  {pii_type:<20} {stats['total']:>6} {stats['detected']:>10} "
-                f"{stats['missed']:>8} {rate:>7.1%}"
-            )
+    for t in sorted(per_type_metrics.keys()):
+        m = per_type_metrics[t]
+        logger.info(
+            f"  {t:<20} {m['precision']:>7.1%} {m['recall']:>7.1%} "
+            f"{m['f1']:>7.1%} {m['tp']:>5} {m['fp']:>5} {m['fn']:>5} {m['support']:>5}"
+        )
+
+    logger.info("  " + "-" * 70)
+    logger.info(
+        f"  {'MICRO-AVG':<20} {micro_p:>7.1%} {micro_r:>7.1%} "
+        f"{micro_f1:>7.1%} {total_tp:>5} {total_fp:>5} {total_fn:>5} {total_tp+total_fn:>5}"
+    )
+    logger.info(
+        f"  {'MACRO-AVG':<20} {macro_p:>7.1%} {macro_r:>7.1%} "
+        f"{macro_f1:>7.1%}"
+    )
+    logger.info("=" * 78)
+    logger.info(f"  Result : {'✅ PASS' if passed else '❌ FAIL'} (recall threshold ≥ {1-threshold:.0%})")
+    logger.info("=" * 78)
 
     return {
-        "total_pii": total_pii,
-        "detected": detected_pii,
-        "missed": missed_pii,
-        "false_positives": false_positives,
-        "leakage_rate": leakage_rate,
-        "detection_rate": detection_rate,
+        "dataset": dataset_path,
+        "num_examples": len(dataset),
+        "num_negative": neg,
+        "total_expected": total_tp + total_fn,
+        "total_predicted": total_tp + total_fp,
+        "per_type": per_type_metrics,
+        "micro": {"precision": round(micro_p, 4), "recall": round(micro_r, 4), "f1": round(micro_f1, 4)},
+        "macro": {"precision": round(macro_p, 4), "recall": round(macro_r, 4), "f1": round(macro_f1, 4)},
         "passed": passed,
     }
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Run privacy leakage benchmark")
+    parser = argparse.ArgumentParser(description="Run entity-level evaluation benchmark")
     parser.add_argument("--dataset", required=True, help="Path to eval dataset (JSON)")
-    parser.add_argument("--threshold", type=float, default=0.08, help="Max acceptable leakage rate")
-    parser.add_argument("--report", action="store_true", help="Show detailed report")
-    parser.add_argument("--verbose", action="store_true", help="Show individual leaks")
+    parser.add_argument("--threshold", type=float, default=0.08, help="Max acceptable miss rate")
+    parser.add_argument("--report", action="store_true", help="Save JSON report")
+    parser.add_argument("--verbose", action="store_true", help="Show individual FN/FP")
 
     args = parser.parse_args()
 

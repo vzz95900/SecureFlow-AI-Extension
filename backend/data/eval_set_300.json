@@ -1,0 +1,2792 @@
+[
+  {
+    "text": "The pharmaceutical sector expanded generics production capacity.",
+    "expected_pii": []
+  },
+  {
+    "text": "Stock markets showed positive trends in the IT sector.",
+    "expected_pii": []
+  },
+  {
+    "text": "Bank branch IFSC code: UTIB0B5W0U5.",
+    "expected_pii": [
+      {
+        "text": "UTIB0B5W0U5",
+        "type": "IFSC"
+      }
+    ]
+  },
+  {
+    "text": "Date of birth: 08/11/1974 as per records.",
+    "expected_pii": [
+      {
+        "text": "08/11/1974",
+        "type": "DOB"
+      }
+    ]
+  },
+  {
+    "text": "Submit passport M3211676 copy for verification.",
+    "expected_pii": [
+      {
+        "text": "M3211676",
+        "type": "PASSPORT"
+      }
+    ]
+  },
+  {
+    "text": "Indian startups raised record funding in the SaaS segment.",
+    "expected_pii": []
+  },
+  {
+    "text": "Credit card 5264402128406773 was used for the transaction.",
+    "expected_pii": [
+      {
+        "text": "5264402128406773",
+        "type": "CREDIT_CARD"
+      }
+    ]
+  },
+  {
+    "text": "DOB 08/05/1978 mentioned in the application.",
+    "expected_pii": [
+      {
+        "text": "08/05/1978",
+        "type": "DOB"
+      }
+    ]
+  },
+  {
+    "text": "Verify passport S8425316 validity.",
+    "expected_pii": [
+      {
+        "text": "S8425316",
+        "type": "PASSPORT"
+      }
+    ]
+  },
+  {
+    "text": "Update PAN DJBFL2453Z for the mutual fund folio.",
+    "expected_pii": [
+      {
+        "text": "DJBFL2453Z",
+        "type": "PAN"
+      }
+    ]
+  },
+  {
+    "text": "Sunita Desai, Aadhaar 5397 4014 8902, PAN YIYTE7730F, for KYC verification.",
+    "expected_pii": [
+      {
+        "text": "Sunita Desai",
+        "type": "PERSON"
+      },
+      {
+        "text": "5397 4014 8902",
+        "type": "AADHAAR"
+      },
+      {
+        "text": "YIYTE7730F",
+        "type": "PAN"
+      }
+    ]
+  },
+  {
+    "text": "Rashmi Verma, Aadhaar 7123 8282 5867, PAN GKELM0615M, for KYC verification.",
+    "expected_pii": [
+      {
+        "text": "Rashmi Verma",
+        "type": "PERSON"
+      },
+      {
+        "text": "7123 8282 5867",
+        "type": "AADHAAR"
+      },
+      {
+        "text": "GKELM0615M",
+        "type": "PAN"
+      }
+    ]
+  },
+  {
+    "text": "My mobile number is 7837908549.",
+    "expected_pii": [
+      {
+        "text": "7837908549",
+        "type": "PHONE"
+      }
+    ]
+  },
+  {
+    "text": "Date of birth: 23/05/1968 as per records.",
+    "expected_pii": [
+      {
+        "text": "23/05/1968",
+        "type": "DOB"
+      }
+    ]
+  },
+  {
+    "text": "Email me at neha-joshi@yahoo.co.in for the contract.",
+    "expected_pii": [
+      {
+        "text": "neha-joshi@yahoo.co.in",
+        "type": "EMAIL"
+      }
+    ]
+  },
+  {
+    "text": "Applicant's DOB is 10/02/1996.",
+    "expected_pii": [
+      {
+        "text": "10/02/1996",
+        "type": "DOB"
+      }
+    ]
+  },
+  {
+    "text": "Credit card 370069974068469 was used for the transaction.",
+    "expected_pii": [
+      {
+        "text": "370069974068469",
+        "type": "CREDIT_CARD"
+      }
+    ]
+  },
+  {
+    "text": "Licence KL-95-20201336869 is valid till 2030.",
+    "expected_pii": [
+      {
+        "text": "KL-95-20201336869",
+        "type": "DRIVING_LICENCE"
+      }
+    ]
+  },
+  {
+    "text": "Link Aadhaar 6303 9117 1822 with the bank account.",
+    "expected_pii": [
+      {
+        "text": "6303 9117 1822",
+        "type": "AADHAAR"
+      }
+    ]
+  },
+  {
+    "text": "Collect request from amit.desai@ybl.",
+    "expected_pii": [
+      {
+        "text": "amit.desai@ybl",
+        "type": "UPI_ID"
+      }
+    ]
+  },
+  {
+    "text": "Forward this report to Rahul Pillai for review.",
+    "expected_pii": [
+      {
+        "text": "Rahul Pillai",
+        "type": "PERSON"
+      }
+    ]
+  },
+  {
+    "text": "Pay via UPI to anita.pillai@oksbi for the order.",
+    "expected_pii": [
+      {
+        "text": "anita.pillai@oksbi",
+        "type": "UPI_ID"
+      }
+    ]
+  },
+  {
+    "text": "Verify passport L7574103 validity.",
+    "expected_pii": [
+      {
+        "text": "L7574103",
+        "type": "PASSPORT"
+      }
+    ]
+  },
+  {
+    "text": "Charge of Rs 5000 on card 371157107837207.",
+    "expected_pii": [
+      {
+        "text": "371157107837207",
+        "type": "CREDIT_CARD"
+      }
+    ]
+  },
+  {
+    "text": "Cricket World Cup 2027 schedule has been announced.",
+    "expected_pii": []
+  },
+  {
+    "text": "Connection from 146.54.171.73 was flagged.",
+    "expected_pii": [
+      {
+        "text": "146.54.171.73",
+        "type": "IP_ADDRESS"
+      }
+    ]
+  },
+  {
+    "text": "Update Aadhaar 4489 6383 4657 in the system records.",
+    "expected_pii": [
+      {
+        "text": "4489 6383 4657",
+        "type": "AADHAAR"
+      }
+    ]
+  },
+  {
+    "text": "Travel document: passport Y4341018.",
+    "expected_pii": [
+      {
+        "text": "Y4341018",
+        "type": "PASSPORT"
+      }
+    ]
+  },
+  {
+    "text": "Send the documents to priya_chopra@infosys.com.",
+    "expected_pii": [
+      {
+        "text": "priya_chopra@infosys.com",
+        "type": "EMAIL"
+      }
+    ]
+  },
+  {
+    "text": "EPIC number OCV8272914 submitted for KYC.",
+    "expected_pii": [
+      {
+        "text": "OCV8272914",
+        "type": "VOTER_ID"
+      }
+    ]
+  },
+  {
+    "text": "Verify IFSC PUNB0GY2HEO for the beneficiary.",
+    "expected_pii": [
+      {
+        "text": "PUNB0GY2HEO",
+        "type": "IFSC"
+      }
+    ]
+  },
+  {
+    "text": "RTGS payment to branch HDFC0FQD42Y.",
+    "expected_pii": [
+      {
+        "text": "HDFC0FQD42Y",
+        "type": "IFSC"
+      }
+    ]
+  },
+  {
+    "text": "Please verify Aadhaar 5103 4131 6475 for KYC.",
+    "expected_pii": [
+      {
+        "text": "5103 4131 6475",
+        "type": "AADHAAR"
+      }
+    ]
+  },
+  {
+    "text": "Please verify PAN WATHZ9888I in the records.",
+    "expected_pii": [
+      {
+        "text": "WATHZ9888I",
+        "type": "PAN"
+      }
+    ]
+  },
+  {
+    "text": "Contact number: +91 83512 67045 for delivery updates.",
+    "expected_pii": [
+      {
+        "text": "+91 83512 67045",
+        "type": "PHONE"
+      }
+    ]
+  },
+  {
+    "text": "Driving licence WB-60-20223876194 for address verification.",
+    "expected_pii": [
+      {
+        "text": "WB-60-20223876194",
+        "type": "DRIVING_LICENCE"
+      }
+    ]
+  },
+  {
+    "text": "Send to Rajesh Pillai, email anita_kumar@wipro.com, voter ID NMC9489345.",
+    "expected_pii": [
+      {
+        "text": "Rajesh Pillai",
+        "type": "PERSON"
+      },
+      {
+        "text": "anita_kumar@wipro.com",
+        "type": "EMAIL"
+      },
+      {
+        "text": "NMC9489345",
+        "type": "VOTER_ID"
+      }
+    ]
+  },
+  {
+    "text": "Submit voter ID GWZ6106936 copy.",
+    "expected_pii": [
+      {
+        "text": "GWZ6106936",
+        "type": "VOTER_ID"
+      }
+    ]
+  },
+  {
+    "text": "PAN JBRHT3873J is linked to the demat account.",
+    "expected_pii": [
+      {
+        "text": "JBRHT3873J",
+        "type": "PAN"
+      }
+    ]
+  },
+  {
+    "text": "Credit card 4934278352199928 was used for the transaction.",
+    "expected_pii": [
+      {
+        "text": "4934278352199928",
+        "type": "CREDIT_CARD"
+      }
+    ]
+  },
+  {
+    "text": "GSTIN 01WLWHY4005L9ZS registered for the firm.",
+    "expected_pii": [
+      {
+        "text": "01WLWHY4005L9ZS",
+        "type": "GSTIN"
+      }
+    ]
+  },
+  {
+    "text": "Aadhaar card showing 8998 5435 3462 was submitted.",
+    "expected_pii": [
+      {
+        "text": "8998 5435 3462",
+        "type": "AADHAAR"
+      }
+    ]
+  },
+  {
+    "text": "Submit PAN FIRGQ4980N for income tax return.",
+    "expected_pii": [
+      {
+        "text": "FIRGQ4980N",
+        "type": "PAN"
+      }
+    ]
+  },
+  {
+    "text": "Patient Rohan Das, DOB 27/07/1983, Aadhaar 3939 8280 7374, admitted today.",
+    "expected_pii": [
+      {
+        "text": "Rohan Das",
+        "type": "PERSON"
+      },
+      {
+        "text": "27/07/1983",
+        "type": "DOB"
+      },
+      {
+        "text": "3939 8280 7374",
+        "type": "AADHAAR"
+      }
+    ]
+  },
+  {
+    "text": "Kavita Gupta, Aadhaar 6899 6423 5369, PAN VMRHI7477O, for KYC verification.",
+    "expected_pii": [
+      {
+        "text": "Kavita Gupta",
+        "type": "PERSON"
+      },
+      {
+        "text": "6899 6423 5369",
+        "type": "AADHAAR"
+      },
+      {
+        "text": "VMRHI7477O",
+        "type": "PAN"
+      }
+    ]
+  },
+  {
+    "text": "Forward this report to Rahul Singh for review.",
+    "expected_pii": [
+      {
+        "text": "Rahul Singh",
+        "type": "PERSON"
+      }
+    ]
+  },
+  {
+    "text": "Update PAN RFFAB2480N for the mutual fund folio.",
+    "expected_pii": [
+      {
+        "text": "RFFAB2480N",
+        "type": "PAN"
+      }
+    ]
+  },
+  {
+    "text": "Bank branch IFSC code: UBIN0MXAO7G.",
+    "expected_pii": [
+      {
+        "text": "UBIN0MXAO7G",
+        "type": "IFSC"
+      }
+    ]
+  },
+  {
+    "text": "Transfer to IFSC BARB0DLAIFS branch.",
+    "expected_pii": [
+      {
+        "text": "BARB0DLAIFS",
+        "type": "IFSC"
+      }
+    ]
+  },
+  {
+    "text": "Pay Divya Pillai via UPI sunita.menon@paytm, mobile +91 85774 24762.",
+    "expected_pii": [
+      {
+        "text": "Divya Pillai",
+        "type": "PERSON"
+      },
+      {
+        "text": "sunita.menon@paytm",
+        "type": "UPI_ID"
+      },
+      {
+        "text": "+91 85774 24762",
+        "type": "PHONE"
+      }
+    ]
+  },
+  {
+    "text": "DOB 24/08/1973 mentioned in the application.",
+    "expected_pii": [
+      {
+        "text": "24/08/1973",
+        "type": "DOB"
+      }
+    ]
+  },
+  {
+    "text": "Database hosted at 26.70.2.247 needs patching.",
+    "expected_pii": [
+      {
+        "text": "26.70.2.247",
+        "type": "IP_ADDRESS"
+      }
+    ]
+  },
+  {
+    "text": "Submit PAN OVPCN1387B for income tax return.",
+    "expected_pii": [
+      {
+        "text": "OVPCN1387B",
+        "type": "PAN"
+      }
+    ]
+  },
+  {
+    "text": "Contact Rahul Nair at sanjay.singh@hotmail.com or +91 81164 93331.",
+    "expected_pii": [
+      {
+        "text": "Rahul Nair",
+        "type": "PERSON"
+      },
+      {
+        "text": "sanjay.singh@hotmail.com",
+        "type": "EMAIL"
+      },
+      {
+        "text": "+91 81164 93331",
+        "type": "PHONE"
+      }
+    ]
+  },
+  {
+    "text": "Lab results filed under MRN#047796493.",
+    "expected_pii": [
+      {
+        "text": "MRN#047796493",
+        "type": "MEDICAL_RECORD"
+      }
+    ]
+  },
+  {
+    "text": "Link Aadhaar 4997 3763 1165 with the bank account.",
+    "expected_pii": [
+      {
+        "text": "4997 3763 1165",
+        "type": "AADHAAR"
+      }
+    ]
+  },
+  {
+    "text": "Business registered with GSTIN 13PKBAE7851Q3ZU.",
+    "expected_pii": [
+      {
+        "text": "13PKBAE7851Q3ZU",
+        "type": "GSTIN"
+      }
+    ]
+  },
+  {
+    "text": "Reach Vikram Sharma via email kiran_mehta@gmail.com or call 09605407525.",
+    "expected_pii": [
+      {
+        "text": "Vikram Sharma",
+        "type": "PERSON"
+      },
+      {
+        "text": "kiran_mehta@gmail.com",
+        "type": "EMAIL"
+      },
+      {
+        "text": "09605407525",
+        "type": "PHONE"
+      }
+    ]
+  },
+  {
+    "text": "Send payment to rahul.rao@oksbi.",
+    "expected_pii": [
+      {
+        "text": "rahul.rao@oksbi",
+        "type": "UPI_ID"
+      }
+    ]
+  },
+  {
+    "text": "Voter ID VXY4333023 for identity proof.",
+    "expected_pii": [
+      {
+        "text": "VXY4333023",
+        "type": "VOTER_ID"
+      }
+    ]
+  },
+  {
+    "text": "Block IP address 48.148.19.3 in the firewall.",
+    "expected_pii": [
+      {
+        "text": "48.148.19.3",
+        "type": "IP_ADDRESS"
+      }
+    ]
+  },
+  {
+    "text": "Electoral ID: AJO1653957 for verification.",
+    "expected_pii": [
+      {
+        "text": "AJO1653957",
+        "type": "VOTER_ID"
+      }
+    ]
+  },
+  {
+    "text": "Reach out on 7074766470 during business hours.",
+    "expected_pii": [
+      {
+        "text": "7074766470",
+        "type": "PHONE"
+      }
+    ]
+  },
+  {
+    "text": "Call me at 07739254509 for further details.",
+    "expected_pii": [
+      {
+        "text": "07739254509",
+        "type": "PHONE"
+      }
+    ]
+  },
+  {
+    "text": "Approval pending from Arun Pillai for budget allocation.",
+    "expected_pii": [
+      {
+        "text": "Arun Pillai",
+        "type": "PERSON"
+      }
+    ]
+  },
+  {
+    "text": "India signed a trade agreement with ASEAN nations.",
+    "expected_pii": []
+  },
+  {
+    "text": "Driving licence MH-40-20219757809 for address verification.",
+    "expected_pii": [
+      {
+        "text": "MH-40-20219757809",
+        "type": "DRIVING_LICENCE"
+      }
+    ]
+  },
+  {
+    "text": "The food processing industry saw 15% growth year over year.",
+    "expected_pii": []
+  },
+  {
+    "text": "Passport V2817004 issued at RPO Delhi.",
+    "expected_pii": [
+      {
+        "text": "V2817004",
+        "type": "PASSPORT"
+      }
+    ]
+  },
+  {
+    "text": "The Reserve Bank maintained the repo rate at current levels.",
+    "expected_pii": []
+  },
+  {
+    "text": "Bank branch IFSC code: BARB084K2R7.",
+    "expected_pii": [
+      {
+        "text": "BARB084K2R7",
+        "type": "IFSC"
+      }
+    ]
+  },
+  {
+    "text": "Submit PAN ISOFN6371S for income tax return.",
+    "expected_pii": [
+      {
+        "text": "ISOFN6371S",
+        "type": "PAN"
+      }
+    ]
+  },
+  {
+    "text": "Rekha Patel, Aadhaar 5983 7354 0331, PAN TTXTW2957M, for KYC verification.",
+    "expected_pii": [
+      {
+        "text": "Rekha Patel",
+        "type": "PERSON"
+      },
+      {
+        "text": "5983 7354 0331",
+        "type": "AADHAAR"
+      },
+      {
+        "text": "TTXTW2957M",
+        "type": "PAN"
+      }
+    ]
+  },
+  {
+    "text": "Pay Pooja Chopra via UPI kiran.gupta@okicici, mobile 8269807126.",
+    "expected_pii": [
+      {
+        "text": "Pooja Chopra",
+        "type": "PERSON"
+      },
+      {
+        "text": "kiran.gupta@okicici",
+        "type": "UPI_ID"
+      },
+      {
+        "text": "8269807126",
+        "type": "PHONE"
+      }
+    ]
+  },
+  {
+    "text": "Pay Anita Mehta via UPI neha.kumar@okhdfcbank, mobile 06632131355.",
+    "expected_pii": [
+      {
+        "text": "Anita Mehta",
+        "type": "PERSON"
+      },
+      {
+        "text": "neha.kumar@okhdfcbank",
+        "type": "UPI_ID"
+      },
+      {
+        "text": "06632131355",
+        "type": "PHONE"
+      }
+    ]
+  },
+  {
+    "text": "Please verify PAN FGCPN9792F in the records.",
+    "expected_pii": [
+      {
+        "text": "FGCPN9792F",
+        "type": "PAN"
+      }
+    ]
+  },
+  {
+    "text": "Forward this report to Geeta Mishra for review.",
+    "expected_pii": [
+      {
+        "text": "Geeta Mishra",
+        "type": "PERSON"
+      }
+    ]
+  },
+  {
+    "text": "Pooja Rao, passport Y9669541, driving licence RJ-58-20220301895, for travel booking.",
+    "expected_pii": [
+      {
+        "text": "Pooja Rao",
+        "type": "PERSON"
+      },
+      {
+        "text": "Y9669541",
+        "type": "PASSPORT"
+      },
+      {
+        "text": "RJ-58-20220301895",
+        "type": "DRIVING_LICENCE"
+      }
+    ]
+  },
+  {
+    "text": "Verify the credentials of Kavita Mehta before onboarding.",
+    "expected_pii": [
+      {
+        "text": "Kavita Mehta",
+        "type": "PERSON"
+      }
+    ]
+  },
+  {
+    "text": "Reach Arun Chopra via email sunita-verma@outlook.com or call 8823345926.",
+    "expected_pii": [
+      {
+        "text": "Arun Chopra",
+        "type": "PERSON"
+      },
+      {
+        "text": "sunita-verma@outlook.com",
+        "type": "EMAIL"
+      },
+      {
+        "text": "8823345926",
+        "type": "PHONE"
+      }
+    ]
+  },
+  {
+    "text": "RTGS payment to branch PUNB0S3V4CS.",
+    "expected_pii": [
+      {
+        "text": "PUNB0S3V4CS",
+        "type": "IFSC"
+      }
+    ]
+  },
+  {
+    "text": "Reach me via sunita-pillai@hotmail.com for queries.",
+    "expected_pii": [
+      {
+        "text": "sunita-pillai@hotmail.com",
+        "type": "EMAIL"
+      }
+    ]
+  },
+  {
+    "text": "Amit Das has been assigned as the new team lead.",
+    "expected_pii": [
+      {
+        "text": "Amit Das",
+        "type": "PERSON"
+      }
+    ]
+  },
+  {
+    "text": "Patient Amit Iyer, DOB 08/12/2000, Aadhaar 9993 7124 0659, admitted today.",
+    "expected_pii": [
+      {
+        "text": "Amit Iyer",
+        "type": "PERSON"
+      },
+      {
+        "text": "08/12/2000",
+        "type": "DOB"
+      },
+      {
+        "text": "9993 7124 0659",
+        "type": "AADHAAR"
+      }
+    ]
+  },
+  {
+    "text": "Contact number: +91 95778 42436 for delivery updates.",
+    "expected_pii": [
+      {
+        "text": "+91 95778 42436",
+        "type": "PHONE"
+      }
+    ]
+  },
+  {
+    "text": "Travel document: passport L4315159.",
+    "expected_pii": [
+      {
+        "text": "L4315159",
+        "type": "PASSPORT"
+      }
+    ]
+  },
+  {
+    "text": "Verify the credentials of Kavita Desai before onboarding.",
+    "expected_pii": [
+      {
+        "text": "Kavita Desai",
+        "type": "PERSON"
+      }
+    ]
+  },
+  {
+    "text": "Travel document: passport C9607956.",
+    "expected_pii": [
+      {
+        "text": "C9607956",
+        "type": "PASSPORT"
+      }
+    ]
+  },
+  {
+    "text": "Please verify Aadhaar 2500 9788 2081 for KYC.",
+    "expected_pii": [
+      {
+        "text": "2500 9788 2081",
+        "type": "AADHAAR"
+      }
+    ]
+  },
+  {
+    "text": "Submit PAN YCZCS9214X for income tax return.",
+    "expected_pii": [
+      {
+        "text": "YCZCS9214X",
+        "type": "PAN"
+      }
+    ]
+  },
+  {
+    "text": "The ISRO mission successfully deployed three satellites into orbit.",
+    "expected_pii": []
+  },
+  {
+    "text": "Contact number: 6234382948 for delivery updates.",
+    "expected_pii": [
+      {
+        "text": "6234382948",
+        "type": "PHONE"
+      }
+    ]
+  },
+  {
+    "text": "Verify passport W9359709 validity.",
+    "expected_pii": [
+      {
+        "text": "W9359709",
+        "type": "PASSPORT"
+      }
+    ]
+  },
+  {
+    "text": "Reach out on 6936767910 during business hours.",
+    "expected_pii": [
+      {
+        "text": "6936767910",
+        "type": "PHONE"
+      }
+    ]
+  },
+  {
+    "text": "Renewable energy capacity in India crossed 150 GW milestone.",
+    "expected_pii": []
+  },
+  {
+    "text": "Transfer to IFSC BARB0OEVXFW branch.",
+    "expected_pii": [
+      {
+        "text": "BARB0OEVXFW",
+        "type": "IFSC"
+      }
+    ]
+  },
+  {
+    "text": "Indian Railways introduced new Vande Bharat routes this quarter.",
+    "expected_pii": []
+  },
+  {
+    "text": "Swati Pillai has been assigned as the new team lead.",
+    "expected_pii": [
+      {
+        "text": "Swati Pillai",
+        "type": "PERSON"
+      }
+    ]
+  },
+  {
+    "text": "Reply to rajeshkumar@infosys.com with the signed copy.",
+    "expected_pii": [
+      {
+        "text": "rajeshkumar@infosys.com",
+        "type": "EMAIL"
+      }
+    ]
+  },
+  {
+    "text": "Reply to rajesh.chopra@outlook.com with the signed copy.",
+    "expected_pii": [
+      {
+        "text": "rajesh.chopra@outlook.com",
+        "type": "EMAIL"
+      }
+    ]
+  },
+  {
+    "text": "Patient record MRN #7484014 needs to be updated.",
+    "expected_pii": [
+      {
+        "text": "MRN #7484014",
+        "type": "MEDICAL_RECORD"
+      }
+    ]
+  },
+  {
+    "text": "Submit driving licence MH-18-20184840683 as ID proof.",
+    "expected_pii": [
+      {
+        "text": "MH-18-20184840683",
+        "type": "DRIVING_LICENCE"
+      }
+    ]
+  },
+  {
+    "text": "Driving licence WB-78-20211447964 for address verification.",
+    "expected_pii": [
+      {
+        "text": "WB-78-20211447964",
+        "type": "DRIVING_LICENCE"
+      }
+    ]
+  },
+  {
+    "text": "Please verify card ending 4349397619193180.",
+    "expected_pii": [
+      {
+        "text": "4349397619193180",
+        "type": "CREDIT_CARD"
+      }
+    ]
+  },
+  {
+    "text": "India's GDP growth rate exceeded expectations in Q3.",
+    "expected_pii": []
+  },
+  {
+    "text": "Licence WB-98-20185536217 is valid till 2030.",
+    "expected_pii": [
+      {
+        "text": "WB-98-20185536217",
+        "type": "DRIVING_LICENCE"
+      }
+    ]
+  },
+  {
+    "text": "Patient record UHID#9788765755 needs to be updated.",
+    "expected_pii": [
+      {
+        "text": "UHID#9788765755",
+        "type": "MEDICAL_RECORD"
+      }
+    ]
+  },
+  {
+    "text": "The document was signed by Sanjay Sharma on Monday.",
+    "expected_pii": [
+      {
+        "text": "Sanjay Sharma",
+        "type": "PERSON"
+      }
+    ]
+  },
+  {
+    "text": "Applicant's DOB is 27/09/1977.",
+    "expected_pii": [
+      {
+        "text": "27/09/1977",
+        "type": "DOB"
+      }
+    ]
+  },
+  {
+    "text": "Pay via UPI to seema.reddy@oksbi for the order.",
+    "expected_pii": [
+      {
+        "text": "seema.reddy@oksbi",
+        "type": "UPI_ID"
+      }
+    ]
+  },
+  {
+    "text": "Verify GSTIN 31EQQLE8257G1Z2 on the portal.",
+    "expected_pii": [
+      {
+        "text": "31EQQLE8257G1Z2",
+        "type": "GSTIN"
+      }
+    ]
+  },
+  {
+    "text": "A major tech conference will be held in Hyderabad next month.",
+    "expected_pii": []
+  },
+  {
+    "text": "Submit voter ID KUL1950521 copy.",
+    "expected_pii": [
+      {
+        "text": "KUL1950521",
+        "type": "VOTER_ID"
+      }
+    ]
+  },
+  {
+    "text": "DL number AP-50-20221772669 issued by RTO.",
+    "expected_pii": [
+      {
+        "text": "AP-50-20221772669",
+        "type": "DRIVING_LICENCE"
+      }
+    ]
+  },
+  {
+    "text": "Send payment to meera.saxena@oksbi.",
+    "expected_pii": [
+      {
+        "text": "meera.saxena@oksbi",
+        "type": "UPI_ID"
+      }
+    ]
+  },
+  {
+    "text": "UPI transactions volume continues to break monthly records.",
+    "expected_pii": []
+  },
+  {
+    "text": "Submit PAN AFIBY2639R for income tax return.",
+    "expected_pii": [
+      {
+        "text": "AFIBY2639R",
+        "type": "PAN"
+      }
+    ]
+  },
+  {
+    "text": "Send the documents to nehamenon@company.in.",
+    "expected_pii": [
+      {
+        "text": "nehamenon@company.in",
+        "type": "EMAIL"
+      }
+    ]
+  },
+  {
+    "text": "Send OTP to 6737961725 for verification.",
+    "expected_pii": [
+      {
+        "text": "6737961725",
+        "type": "PHONE"
+      }
+    ]
+  },
+  {
+    "text": "Verify the credentials of Anita Iyer before onboarding.",
+    "expected_pii": [
+      {
+        "text": "Anita Iyer",
+        "type": "PERSON"
+      }
+    ]
+  },
+  {
+    "text": "Reply to arun_bhat@tcs.com with the signed copy.",
+    "expected_pii": [
+      {
+        "text": "arun_bhat@tcs.com",
+        "type": "EMAIL"
+      }
+    ]
+  },
+  {
+    "text": "UPI handle: rashmi.chopra@ibl for quick transfers.",
+    "expected_pii": [
+      {
+        "text": "rashmi.chopra@ibl",
+        "type": "UPI_ID"
+      }
+    ]
+  },
+  {
+    "text": "Born on 08/05/1995 according to the certificate.",
+    "expected_pii": [
+      {
+        "text": "08/05/1995",
+        "type": "DOB"
+      }
+    ]
+  },
+  {
+    "text": "Credit card 4193408146794714 was used for the transaction.",
+    "expected_pii": [
+      {
+        "text": "4193408146794714",
+        "type": "CREDIT_CARD"
+      }
+    ]
+  },
+  {
+    "text": "Verify GSTIN 21EZTGS3857J8ZB on the portal.",
+    "expected_pii": [
+      {
+        "text": "21EZTGS3857J8ZB",
+        "type": "GSTIN"
+      }
+    ]
+  },
+  {
+    "text": "Aadhaar card showing 5252 8809 5701 was submitted.",
+    "expected_pii": [
+      {
+        "text": "5252 8809 5701",
+        "type": "AADHAAR"
+      }
+    ]
+  },
+  {
+    "text": "Card number 5163666768696345 has been flagged for fraud.",
+    "expected_pii": [
+      {
+        "text": "5163666768696345",
+        "type": "CREDIT_CARD"
+      }
+    ]
+  },
+  {
+    "text": "Passport number C5403269 for visa application.",
+    "expected_pii": [
+      {
+        "text": "C5403269",
+        "type": "PASSPORT"
+      }
+    ]
+  },
+  {
+    "text": "A new wildlife sanctuary was established in the Western Ghats.",
+    "expected_pii": []
+  },
+  {
+    "text": "Patient Meera Mehta, DOB 25/05/1966, Aadhaar 4126 7888 6101, admitted today.",
+    "expected_pii": [
+      {
+        "text": "Meera Mehta",
+        "type": "PERSON"
+      },
+      {
+        "text": "25/05/1966",
+        "type": "DOB"
+      },
+      {
+        "text": "4126 7888 6101",
+        "type": "AADHAAR"
+      }
+    ]
+  },
+  {
+    "text": "EPIC number CRN0393719 submitted for KYC.",
+    "expected_pii": [
+      {
+        "text": "CRN0393719",
+        "type": "VOTER_ID"
+      }
+    ]
+  },
+  {
+    "text": "Reply to lakshmibhat@yahoo.co.in with the signed copy.",
+    "expected_pii": [
+      {
+        "text": "lakshmibhat@yahoo.co.in",
+        "type": "EMAIL"
+      }
+    ]
+  },
+  {
+    "text": "Verify GSTIN 16URHBW0442T3ZU on the portal.",
+    "expected_pii": [
+      {
+        "text": "16URHBW0442T3ZU",
+        "type": "GSTIN"
+      }
+    ]
+  },
+  {
+    "text": "Database hosted at 166.30.45.167 needs patching.",
+    "expected_pii": [
+      {
+        "text": "166.30.45.167",
+        "type": "IP_ADDRESS"
+      }
+    ]
+  },
+  {
+    "text": "Verify passport Y8455686 validity.",
+    "expected_pii": [
+      {
+        "text": "Y8455686",
+        "type": "PASSPORT"
+      }
+    ]
+  },
+  {
+    "text": "Approval pending from Lakshmi Verma for budget allocation.",
+    "expected_pii": [
+      {
+        "text": "Lakshmi Verma",
+        "type": "PERSON"
+      }
+    ]
+  },
+  {
+    "text": "Update Aadhaar 6746 8723 4309 in the system records.",
+    "expected_pii": [
+      {
+        "text": "6746 8723 4309",
+        "type": "AADHAAR"
+      }
+    ]
+  },
+  {
+    "text": "My Aadhaar number is 4624 7317 8108.",
+    "expected_pii": [
+      {
+        "text": "4624 7317 8108",
+        "type": "AADHAAR"
+      }
+    ]
+  },
+  {
+    "text": "Reach me via priya.mehta@wipro.com for queries.",
+    "expected_pii": [
+      {
+        "text": "priya.mehta@wipro.com",
+        "type": "EMAIL"
+      }
+    ]
+  },
+  {
+    "text": "Link Aadhaar 3326 7736 0260 with the bank account.",
+    "expected_pii": [
+      {
+        "text": "3326 7736 0260",
+        "type": "AADHAAR"
+      }
+    ]
+  },
+  {
+    "text": "My mobile number is 08982337100.",
+    "expected_pii": [
+      {
+        "text": "08982337100",
+        "type": "PHONE"
+      }
+    ]
+  },
+  {
+    "text": "Meera Mishra, Aadhaar 4687 0568 5662, PAN HENFH3789R, for KYC verification.",
+    "expected_pii": [
+      {
+        "text": "Meera Mishra",
+        "type": "PERSON"
+      },
+      {
+        "text": "4687 0568 5662",
+        "type": "AADHAAR"
+      },
+      {
+        "text": "HENFH3789R",
+        "type": "PAN"
+      }
+    ]
+  },
+  {
+    "text": "Send the documents to nikhil-nair@infosys.com.",
+    "expected_pii": [
+      {
+        "text": "nikhil-nair@infosys.com",
+        "type": "EMAIL"
+      }
+    ]
+  },
+  {
+    "text": "Born on 23/12/1991 according to the certificate.",
+    "expected_pii": [
+      {
+        "text": "23/12/1991",
+        "type": "DOB"
+      }
+    ]
+  },
+  {
+    "text": "Update Aadhaar 3462 7048 2814 in the system records.",
+    "expected_pii": [
+      {
+        "text": "3462 7048 2814",
+        "type": "AADHAAR"
+      }
+    ]
+  },
+  {
+    "text": "Please verify Aadhaar 5503 0564 1395 for KYC.",
+    "expected_pii": [
+      {
+        "text": "5503 0564 1395",
+        "type": "AADHAAR"
+      }
+    ]
+  },
+  {
+    "text": "Reply to rohanverma@gmail.com with the signed copy.",
+    "expected_pii": [
+      {
+        "text": "rohanverma@gmail.com",
+        "type": "EMAIL"
+      }
+    ]
+  },
+  {
+    "text": "Update PAN FUSJB5911O for the mutual fund folio.",
+    "expected_pii": [
+      {
+        "text": "FUSJB5911O",
+        "type": "PAN"
+      }
+    ]
+  },
+  {
+    "text": "Meeting scheduled with Amit Pillai at 3 PM today.",
+    "expected_pii": [
+      {
+        "text": "Amit Pillai",
+        "type": "PERSON"
+      }
+    ]
+  },
+  {
+    "text": "Server at 120.139.98.208 is running the deployment.",
+    "expected_pii": [
+      {
+        "text": "120.139.98.208",
+        "type": "IP_ADDRESS"
+      }
+    ]
+  },
+  {
+    "text": "EPIC number XAF1964721 submitted for KYC.",
+    "expected_pii": [
+      {
+        "text": "XAF1964721",
+        "type": "VOTER_ID"
+      }
+    ]
+  },
+  {
+    "text": "Please verify card ending 5246842509929643.",
+    "expected_pii": [
+      {
+        "text": "5246842509929643",
+        "type": "CREDIT_CARD"
+      }
+    ]
+  },
+  {
+    "text": "The weather forecast shows rain across Karnataka this week.",
+    "expected_pii": []
+  },
+  {
+    "text": "GST number 34JYLPK5686Z5Z4 for invoice generation.",
+    "expected_pii": [
+      {
+        "text": "34JYLPK5686Z5Z4",
+        "type": "GSTIN"
+      }
+    ]
+  },
+  {
+    "text": "Verify passport L6104320 validity.",
+    "expected_pii": [
+      {
+        "text": "L6104320",
+        "type": "PASSPORT"
+      }
+    ]
+  },
+  {
+    "text": "Kavita Gupta has been assigned as the new team lead.",
+    "expected_pii": [
+      {
+        "text": "Kavita Gupta",
+        "type": "PERSON"
+      }
+    ]
+  },
+  {
+    "text": "Please verify card ending 373636469366647.",
+    "expected_pii": [
+      {
+        "text": "373636469366647",
+        "type": "CREDIT_CARD"
+      }
+    ]
+  },
+  {
+    "text": "Pay via UPI to vikram.bhat@ybl for the order.",
+    "expected_pii": [
+      {
+        "text": "vikram.bhat@ybl",
+        "type": "UPI_ID"
+      }
+    ]
+  },
+  {
+    "text": "PAN FSMFE6077D is linked to the demat account.",
+    "expected_pii": [
+      {
+        "text": "FSMFE6077D",
+        "type": "PAN"
+      }
+    ]
+  },
+  {
+    "text": "Travel document: passport R6082553.",
+    "expected_pii": [
+      {
+        "text": "R6082553",
+        "type": "PASSPORT"
+      }
+    ]
+  },
+  {
+    "text": "Anita Pillai, Aadhaar 7604 6618 3982, PAN REGGP1122Z, for KYC verification.",
+    "expected_pii": [
+      {
+        "text": "Anita Pillai",
+        "type": "PERSON"
+      },
+      {
+        "text": "7604 6618 3982",
+        "type": "AADHAAR"
+      },
+      {
+        "text": "REGGP1122Z",
+        "type": "PAN"
+      }
+    ]
+  },
+  {
+    "text": "Vinay Saxena submitted the quarterly performance review.",
+    "expected_pii": [
+      {
+        "text": "Vinay Saxena",
+        "type": "PERSON"
+      }
+    ]
+  },
+  {
+    "text": "RTGS payment to branch BARB0I3IY1S.",
+    "expected_pii": [
+      {
+        "text": "BARB0I3IY1S",
+        "type": "IFSC"
+      }
+    ]
+  },
+  {
+    "text": "Pay Suresh Joshi via UPI vinay.das@apl, mobile 08377607302.",
+    "expected_pii": [
+      {
+        "text": "Suresh Joshi",
+        "type": "PERSON"
+      },
+      {
+        "text": "vinay.das@apl",
+        "type": "UPI_ID"
+      },
+      {
+        "text": "08377607302",
+        "type": "PHONE"
+      }
+    ]
+  },
+  {
+    "text": "Reach Neha Iyer via email vikrampillai@hotmail.com or call 06580800160.",
+    "expected_pii": [
+      {
+        "text": "Neha Iyer",
+        "type": "PERSON"
+      },
+      {
+        "text": "vikrampillai@hotmail.com",
+        "type": "EMAIL"
+      },
+      {
+        "text": "06580800160",
+        "type": "PHONE"
+      }
+    ]
+  },
+  {
+    "text": "Update Aadhaar 8532 8710 1226 in the system records.",
+    "expected_pii": [
+      {
+        "text": "8532 8710 1226",
+        "type": "AADHAAR"
+      }
+    ]
+  },
+  {
+    "text": "Submit driving licence KA-09-20197335669 as ID proof.",
+    "expected_pii": [
+      {
+        "text": "KA-09-20197335669",
+        "type": "DRIVING_LICENCE"
+      }
+    ]
+  },
+  {
+    "text": "Driving licence MH-86-20213869167 for address verification.",
+    "expected_pii": [
+      {
+        "text": "MH-86-20213869167",
+        "type": "DRIVING_LICENCE"
+      }
+    ]
+  },
+  {
+    "text": "GST number 08NHEFL9520G9ZR for invoice generation.",
+    "expected_pii": [
+      {
+        "text": "08NHEFL9520G9ZR",
+        "type": "GSTIN"
+      }
+    ]
+  },
+  {
+    "text": "Please verify PAN ZPYJT8849O in the records.",
+    "expected_pii": [
+      {
+        "text": "ZPYJT8849O",
+        "type": "PAN"
+      }
+    ]
+  },
+  {
+    "text": "Contact number: 6406015391 for delivery updates.",
+    "expected_pii": [
+      {
+        "text": "6406015391",
+        "type": "PHONE"
+      }
+    ]
+  },
+  {
+    "text": "Lab results filed under MR #055513.",
+    "expected_pii": [
+      {
+        "text": "MR #055513",
+        "type": "MEDICAL_RECORD"
+      }
+    ]
+  },
+  {
+    "text": "Connection from 251.80.208.168 was flagged.",
+    "expected_pii": [
+      {
+        "text": "251.80.208.168",
+        "type": "IP_ADDRESS"
+      }
+    ]
+  },
+  {
+    "text": "Nikhil Reddy has been assigned as the new team lead.",
+    "expected_pii": [
+      {
+        "text": "Nikhil Reddy",
+        "type": "PERSON"
+      }
+    ]
+  },
+  {
+    "text": "Update PAN AVHBE2871J for the mutual fund folio.",
+    "expected_pii": [
+      {
+        "text": "AVHBE2871J",
+        "type": "PAN"
+      }
+    ]
+  },
+  {
+    "text": "DL number MH-71-20222217713 issued by RTO.",
+    "expected_pii": [
+      {
+        "text": "MH-71-20222217713",
+        "type": "DRIVING_LICENCE"
+      }
+    ]
+  },
+  {
+    "text": "Database hosted at 254.252.68.218 needs patching.",
+    "expected_pii": [
+      {
+        "text": "254.252.68.218",
+        "type": "IP_ADDRESS"
+      }
+    ]
+  },
+  {
+    "text": "Confirmation will be sent to swati-verma@wipro.com.",
+    "expected_pii": [
+      {
+        "text": "swati-verma@wipro.com",
+        "type": "EMAIL"
+      }
+    ]
+  },
+  {
+    "text": "Aadhaar card showing 7534 1928 3276 was submitted.",
+    "expected_pii": [
+      {
+        "text": "7534 1928 3276",
+        "type": "AADHAAR"
+      }
+    ]
+  },
+  {
+    "text": "Send to Divya Chopra, email divyachopra@company.in, voter ID EOU2022757.",
+    "expected_pii": [
+      {
+        "text": "Divya Chopra",
+        "type": "PERSON"
+      },
+      {
+        "text": "divyachopra@company.in",
+        "type": "EMAIL"
+      },
+      {
+        "text": "EOU2022757",
+        "type": "VOTER_ID"
+      }
+    ]
+  },
+  {
+    "text": "Reach me via priyarao@company.in for queries.",
+    "expected_pii": [
+      {
+        "text": "priyarao@company.in",
+        "type": "EMAIL"
+      }
+    ]
+  },
+  {
+    "text": "Voter card MHJ5988126 is the address proof.",
+    "expected_pii": [
+      {
+        "text": "MHJ5988126",
+        "type": "VOTER_ID"
+      }
+    ]
+  },
+  {
+    "text": "Discharge summary for UHID#37066013 is ready.",
+    "expected_pii": [
+      {
+        "text": "UHID#37066013",
+        "type": "MEDICAL_RECORD"
+      }
+    ]
+  },
+  {
+    "text": "My mobile number is 9819687479.",
+    "expected_pii": [
+      {
+        "text": "9819687479",
+        "type": "PHONE"
+      }
+    ]
+  },
+  {
+    "text": "Tax filing under GSTIN 23ZDJPD3422D1ZS.",
+    "expected_pii": [
+      {
+        "text": "23ZDJPD3422D1ZS",
+        "type": "GSTIN"
+      }
+    ]
+  },
+  {
+    "text": "Contact number: 07671024392 for delivery updates.",
+    "expected_pii": [
+      {
+        "text": "07671024392",
+        "type": "PHONE"
+      }
+    ]
+  },
+  {
+    "text": "Submit voter ID HTL5384839 copy.",
+    "expected_pii": [
+      {
+        "text": "HTL5384839",
+        "type": "VOTER_ID"
+      }
+    ]
+  },
+  {
+    "text": "Born on 16/06/1995 according to the certificate.",
+    "expected_pii": [
+      {
+        "text": "16/06/1995",
+        "type": "DOB"
+      }
+    ]
+  },
+  {
+    "text": "Submit driving licence KA-18-20187902783 as ID proof.",
+    "expected_pii": [
+      {
+        "text": "KA-18-20187902783",
+        "type": "DRIVING_LICENCE"
+      }
+    ]
+  },
+  {
+    "text": "Please verify PAN LZDTG2709R in the records.",
+    "expected_pii": [
+      {
+        "text": "LZDTG2709R",
+        "type": "PAN"
+      }
+    ]
+  },
+  {
+    "text": "The textile industry reported strong export growth numbers.",
+    "expected_pii": []
+  },
+  {
+    "text": "Patient record MR #630202047 needs to be updated.",
+    "expected_pii": [
+      {
+        "text": "MR #630202047",
+        "type": "MEDICAL_RECORD"
+      }
+    ]
+  },
+  {
+    "text": "Priya Das, passport H9280528, driving licence KL-41-20225633162, for travel booking.",
+    "expected_pii": [
+      {
+        "text": "Priya Das",
+        "type": "PERSON"
+      },
+      {
+        "text": "H9280528",
+        "type": "PASSPORT"
+      },
+      {
+        "text": "KL-41-20225633162",
+        "type": "DRIVING_LICENCE"
+      }
+    ]
+  },
+  {
+    "text": "Payment processed via card 5391987998370546.",
+    "expected_pii": [
+      {
+        "text": "5391987998370546",
+        "type": "CREDIT_CARD"
+      }
+    ]
+  },
+  {
+    "text": "Submit PAN LYYAO6505Q for income tax return.",
+    "expected_pii": [
+      {
+        "text": "LYYAO6505Q",
+        "type": "PAN"
+      }
+    ]
+  },
+  {
+    "text": "Update Aadhaar 3031 0518 3473 in the system records.",
+    "expected_pii": [
+      {
+        "text": "3031 0518 3473",
+        "type": "AADHAAR"
+      }
+    ]
+  },
+  {
+    "text": "Please contact Suresh Chopra regarding the project update.",
+    "expected_pii": [
+      {
+        "text": "Suresh Chopra",
+        "type": "PERSON"
+      }
+    ]
+  },
+  {
+    "text": "The fisheries sector showed robust growth in aquaculture.",
+    "expected_pii": []
+  },
+  {
+    "text": "Voter card JHK3576006 is the address proof.",
+    "expected_pii": [
+      {
+        "text": "JHK3576006",
+        "type": "VOTER_ID"
+      }
+    ]
+  },
+  {
+    "text": "Aadhaar card showing 3669 7848 0184 was submitted.",
+    "expected_pii": [
+      {
+        "text": "3669 7848 0184",
+        "type": "AADHAAR"
+      }
+    ]
+  },
+  {
+    "text": "Arun Chopra submitted the quarterly performance review.",
+    "expected_pii": [
+      {
+        "text": "Arun Chopra",
+        "type": "PERSON"
+      }
+    ]
+  },
+  {
+    "text": "Forward this report to Sanjay Gupta for review.",
+    "expected_pii": [
+      {
+        "text": "Sanjay Gupta",
+        "type": "PERSON"
+      }
+    ]
+  },
+  {
+    "text": "Tax filing under GSTIN 27GWEHS7119O8ZT.",
+    "expected_pii": [
+      {
+        "text": "27GWEHS7119O8ZT",
+        "type": "GSTIN"
+      }
+    ]
+  },
+  {
+    "text": "Voter ID OKM6920737 for identity proof.",
+    "expected_pii": [
+      {
+        "text": "OKM6920737",
+        "type": "VOTER_ID"
+      }
+    ]
+  },
+  {
+    "text": "Send the documents to rashmi_kumar@company.in.",
+    "expected_pii": [
+      {
+        "text": "rashmi_kumar@company.in",
+        "type": "EMAIL"
+      }
+    ]
+  },
+  {
+    "text": "Contact Sunita Mishra at kiran-desai@company.in or +91 94661 94290.",
+    "expected_pii": [
+      {
+        "text": "Sunita Mishra",
+        "type": "PERSON"
+      },
+      {
+        "text": "kiran-desai@company.in",
+        "type": "EMAIL"
+      },
+      {
+        "text": "+91 94661 94290",
+        "type": "PHONE"
+      }
+    ]
+  },
+  {
+    "text": "Pooja Pillai, passport H4411870, driving licence GJ-79-20182054682, for travel booking.",
+    "expected_pii": [
+      {
+        "text": "Pooja Pillai",
+        "type": "PERSON"
+      },
+      {
+        "text": "H4411870",
+        "type": "PASSPORT"
+      },
+      {
+        "text": "GJ-79-20182054682",
+        "type": "DRIVING_LICENCE"
+      }
+    ]
+  },
+  {
+    "text": "Send payment to anita.kumar@apl.",
+    "expected_pii": [
+      {
+        "text": "anita.kumar@apl",
+        "type": "UPI_ID"
+      }
+    ]
+  },
+  {
+    "text": "Link Aadhaar 8701 0651 3338 with the bank account.",
+    "expected_pii": [
+      {
+        "text": "8701 0651 3338",
+        "type": "AADHAAR"
+      }
+    ]
+  },
+  {
+    "text": "Submit passport S9603503 copy for verification.",
+    "expected_pii": [
+      {
+        "text": "S9603503",
+        "type": "PASSPORT"
+      }
+    ]
+  },
+  {
+    "text": "Collect request from neha.gupta@okhdfcbank.",
+    "expected_pii": [
+      {
+        "text": "neha.gupta@okhdfcbank",
+        "type": "UPI_ID"
+      }
+    ]
+  },
+  {
+    "text": "Electric vehicle adoption is growing rapidly in Indian cities.",
+    "expected_pii": []
+  },
+  {
+    "text": "Vinay Singh, passport S3626770, driving licence KL-62-20224596573, for travel booking.",
+    "expected_pii": [
+      {
+        "text": "Vinay Singh",
+        "type": "PERSON"
+      },
+      {
+        "text": "S3626770",
+        "type": "PASSPORT"
+      },
+      {
+        "text": "KL-62-20224596573",
+        "type": "DRIVING_LICENCE"
+      }
+    ]
+  },
+  {
+    "text": "Arjun Reddy, passport L7889139, driving licence TN-62-20201337697, for travel booking.",
+    "expected_pii": [
+      {
+        "text": "Arjun Reddy",
+        "type": "PERSON"
+      },
+      {
+        "text": "L7889139",
+        "type": "PASSPORT"
+      },
+      {
+        "text": "TN-62-20201337697",
+        "type": "DRIVING_LICENCE"
+      }
+    ]
+  },
+  {
+    "text": "Reach me via rahulchopra@company.in for queries.",
+    "expected_pii": [
+      {
+        "text": "rahulchopra@company.in",
+        "type": "EMAIL"
+      }
+    ]
+  },
+  {
+    "text": "Reach out on +91 65959 39158 during business hours.",
+    "expected_pii": [
+      {
+        "text": "+91 65959 39158",
+        "type": "PHONE"
+      }
+    ]
+  },
+  {
+    "text": "Bangalore traffic congestion worsened during peak hours today.",
+    "expected_pii": []
+  },
+  {
+    "text": "Please verify PAN KVHFN7634V in the records.",
+    "expected_pii": [
+      {
+        "text": "KVHFN7634V",
+        "type": "PAN"
+      }
+    ]
+  },
+  {
+    "text": "Date of birth: 10/01/1978 as per records.",
+    "expected_pii": [
+      {
+        "text": "10/01/1978",
+        "type": "DOB"
+      }
+    ]
+  },
+  {
+    "text": "Payment processed via card 5313326083087997.",
+    "expected_pii": [
+      {
+        "text": "5313326083087997",
+        "type": "CREDIT_CARD"
+      }
+    ]
+  },
+  {
+    "text": "Please verify PAN NUYCV0563Y in the records.",
+    "expected_pii": [
+      {
+        "text": "NUYCV0563Y",
+        "type": "PAN"
+      }
+    ]
+  },
+  {
+    "text": "Please verify card ending 374281961927444.",
+    "expected_pii": [
+      {
+        "text": "374281961927444",
+        "type": "CREDIT_CARD"
+      }
+    ]
+  },
+  {
+    "text": "The new expressway will reduce travel time between Delhi and Jaipur.",
+    "expected_pii": []
+  },
+  {
+    "text": "Pay Amit Reddy via UPI nikhil.saxena@okhdfcbank, mobile +91 80294 39466.",
+    "expected_pii": [
+      {
+        "text": "Amit Reddy",
+        "type": "PERSON"
+      },
+      {
+        "text": "nikhil.saxena@okhdfcbank",
+        "type": "UPI_ID"
+      },
+      {
+        "text": "+91 80294 39466",
+        "type": "PHONE"
+      }
+    ]
+  },
+  {
+    "text": "Solar panel installations doubled in the residential segment.",
+    "expected_pii": []
+  },
+  {
+    "text": "Applicant's DOB is 08/01/2002.",
+    "expected_pii": [
+      {
+        "text": "08/01/2002",
+        "type": "DOB"
+      }
+    ]
+  },
+  {
+    "text": "Reply to amit.joshi@infosys.com with the signed copy.",
+    "expected_pii": [
+      {
+        "text": "amit.joshi@infosys.com",
+        "type": "EMAIL"
+      }
+    ]
+  },
+  {
+    "text": "The automobile sector reported highest ever monthly sales.",
+    "expected_pii": []
+  },
+  {
+    "text": "Voter ID VQU1286174 for identity proof.",
+    "expected_pii": [
+      {
+        "text": "VQU1286174",
+        "type": "VOTER_ID"
+      }
+    ]
+  },
+  {
+    "text": "Patient Amit Saxena, DOB 26/04/2005, Aadhaar 3142 6265 5110, admitted today.",
+    "expected_pii": [
+      {
+        "text": "Amit Saxena",
+        "type": "PERSON"
+      },
+      {
+        "text": "26/04/2005",
+        "type": "DOB"
+      },
+      {
+        "text": "3142 6265 5110",
+        "type": "AADHAAR"
+      }
+    ]
+  },
+  {
+    "text": "Transfer to IFSC HDFC0YT37NY branch.",
+    "expected_pii": [
+      {
+        "text": "HDFC0YT37NY",
+        "type": "IFSC"
+      }
+    ]
+  },
+  {
+    "text": "Retrieve records for MR #66932944.",
+    "expected_pii": [
+      {
+        "text": "MR #66932944",
+        "type": "MEDICAL_RECORD"
+      }
+    ]
+  },
+  {
+    "text": "Pay Pankaj Pillai via UPI manish.singh@paytm, mobile 8165669371.",
+    "expected_pii": [
+      {
+        "text": "Pankaj Pillai",
+        "type": "PERSON"
+      },
+      {
+        "text": "manish.singh@paytm",
+        "type": "UPI_ID"
+      },
+      {
+        "text": "8165669371",
+        "type": "PHONE"
+      }
+    ]
+  },
+  {
+    "text": "Driving licence MH-26-20192435491 for address verification.",
+    "expected_pii": [
+      {
+        "text": "MH-26-20192435491",
+        "type": "DRIVING_LICENCE"
+      }
+    ]
+  },
+  {
+    "text": "DOB 20/12/1997 mentioned in the application.",
+    "expected_pii": [
+      {
+        "text": "20/12/1997",
+        "type": "DOB"
+      }
+    ]
+  },
+  {
+    "text": "GST number 25NTHTV6103K9ZX for invoice generation.",
+    "expected_pii": [
+      {
+        "text": "25NTHTV6103K9ZX",
+        "type": "GSTIN"
+      }
+    ]
+  },
+  {
+    "text": "Block IP address 123.102.147.83 in the firewall.",
+    "expected_pii": [
+      {
+        "text": "123.102.147.83",
+        "type": "IP_ADDRESS"
+      }
+    ]
+  },
+  {
+    "text": "Please contact Manish Verma regarding the project update.",
+    "expected_pii": [
+      {
+        "text": "Manish Verma",
+        "type": "PERSON"
+      }
+    ]
+  },
+  {
+    "text": "Monsoon arrived in Kerala earlier than expected this year.",
+    "expected_pii": []
+  },
+  {
+    "text": "Confirmation will be sent to priya_joshi@infosys.com.",
+    "expected_pii": [
+      {
+        "text": "priya_joshi@infosys.com",
+        "type": "EMAIL"
+      }
+    ]
+  },
+  {
+    "text": "RTGS payment to branch UBIN022L29M.",
+    "expected_pii": [
+      {
+        "text": "UBIN022L29M",
+        "type": "IFSC"
+      }
+    ]
+  },
+  {
+    "text": "Bank branch IFSC code: BARB03OJZCE.",
+    "expected_pii": [
+      {
+        "text": "BARB03OJZCE",
+        "type": "IFSC"
+      }
+    ]
+  },
+  {
+    "text": "Reach me via divyaiyer@wipro.com for queries.",
+    "expected_pii": [
+      {
+        "text": "divyaiyer@wipro.com",
+        "type": "EMAIL"
+      }
+    ]
+  },
+  {
+    "text": "Coastal erosion along the Konkan coast is a growing concern.",
+    "expected_pii": []
+  },
+  {
+    "text": "Discharge summary for MRN#1819319879 is ready.",
+    "expected_pii": [
+      {
+        "text": "MRN#1819319879",
+        "type": "MEDICAL_RECORD"
+      }
+    ]
+  },
+  {
+    "text": "Submit driving licence AP-51-20224062806 as ID proof.",
+    "expected_pii": [
+      {
+        "text": "AP-51-20224062806",
+        "type": "DRIVING_LICENCE"
+      }
+    ]
+  },
+  {
+    "text": "The Supreme Court delivered a landmark judgment on data privacy.",
+    "expected_pii": []
+  },
+  {
+    "text": "GSTIN 20PCQTS1676S1ZB registered for the firm.",
+    "expected_pii": [
+      {
+        "text": "20PCQTS1676S1ZB",
+        "type": "GSTIN"
+      }
+    ]
+  },
+  {
+    "text": "UPI ID sunita.menon@okhdfcbank registered for refunds.",
+    "expected_pii": [
+      {
+        "text": "sunita.menon@okhdfcbank",
+        "type": "UPI_ID"
+      }
+    ]
+  },
+  {
+    "text": "Please verify card ending 379415355431652.",
+    "expected_pii": [
+      {
+        "text": "379415355431652",
+        "type": "CREDIT_CARD"
+      }
+    ]
+  },
+  {
+    "text": "Update Aadhaar 9672 4238 8496 in the system records.",
+    "expected_pii": [
+      {
+        "text": "9672 4238 8496",
+        "type": "AADHAAR"
+      }
+    ]
+  },
+  {
+    "text": "Business registered with GSTIN 02CKLFG5025U8ZS.",
+    "expected_pii": [
+      {
+        "text": "02CKLFG5025U8ZS",
+        "type": "GSTIN"
+      }
+    ]
+  },
+  {
+    "text": "Connection from 240.18.203.202 was flagged.",
+    "expected_pii": [
+      {
+        "text": "240.18.203.202",
+        "type": "IP_ADDRESS"
+      }
+    ]
+  },
+  {
+    "text": "Tax filing under GSTIN 27DRKTP8701G9ZU.",
+    "expected_pii": [
+      {
+        "text": "27DRKTP8701G9ZU",
+        "type": "GSTIN"
+      }
+    ]
+  },
+  {
+    "text": "Electoral ID: DSC5631799 for verification.",
+    "expected_pii": [
+      {
+        "text": "DSC5631799",
+        "type": "VOTER_ID"
+      }
+    ]
+  },
+  {
+    "text": "My Aadhaar number is 3913 6193 9909.",
+    "expected_pii": [
+      {
+        "text": "3913 6193 9909",
+        "type": "AADHAAR"
+      }
+    ]
+  },
+  {
+    "text": "Lab results filed under MR 850611322.",
+    "expected_pii": [
+      {
+        "text": "MR 850611322",
+        "type": "MEDICAL_RECORD"
+      }
+    ]
+  },
+  {
+    "text": "Tax filing under GSTIN 03YUGFY5608R5ZT.",
+    "expected_pii": [
+      {
+        "text": "03YUGFY5608R5ZT",
+        "type": "GSTIN"
+      }
+    ]
+  },
+  {
+    "text": "Born on 12/08/2001 according to the certificate.",
+    "expected_pii": [
+      {
+        "text": "12/08/2001",
+        "type": "DOB"
+      }
+    ]
+  },
+  {
+    "text": "Send payment to rahul.saxena@apl.",
+    "expected_pii": [
+      {
+        "text": "rahul.saxena@apl",
+        "type": "UPI_ID"
+      }
+    ]
+  },
+  {
+    "text": "Send OTP to 09343432258 for verification.",
+    "expected_pii": [
+      {
+        "text": "09343432258",
+        "type": "PHONE"
+      }
+    ]
+  },
+  {
+    "text": "Send to Nandini Singh, email nandini.patel@tcs.com, voter ID JOB0144758.",
+    "expected_pii": [
+      {
+        "text": "Nandini Singh",
+        "type": "PERSON"
+      },
+      {
+        "text": "nandini.patel@tcs.com",
+        "type": "EMAIL"
+      },
+      {
+        "text": "JOB0144758",
+        "type": "VOTER_ID"
+      }
+    ]
+  },
+  {
+    "text": "Business registered with GSTIN 22RZPAT4977S4ZD.",
+    "expected_pii": [
+      {
+        "text": "22RZPAT4977S4ZD",
+        "type": "GSTIN"
+      }
+    ]
+  },
+  {
+    "text": "NEFT transfer via UTIB0FVETEQ.",
+    "expected_pii": [
+      {
+        "text": "UTIB0FVETEQ",
+        "type": "IFSC"
+      }
+    ]
+  },
+  {
+    "text": "Submit voter ID CVC7880371 copy.",
+    "expected_pii": [
+      {
+        "text": "CVC7880371",
+        "type": "VOTER_ID"
+      }
+    ]
+  },
+  {
+    "text": "My mobile number is +91 73545 47372.",
+    "expected_pii": [
+      {
+        "text": "+91 73545 47372",
+        "type": "PHONE"
+      }
+    ]
+  },
+  {
+    "text": "Transfer to IFSC CNRB0B9YOH3 branch.",
+    "expected_pii": [
+      {
+        "text": "CNRB0B9YOH3",
+        "type": "IFSC"
+      }
+    ]
+  },
+  {
+    "text": "Reach out on 7419423697 during business hours.",
+    "expected_pii": [
+      {
+        "text": "7419423697",
+        "type": "PHONE"
+      }
+    ]
+  },
+  {
+    "text": "Contact number: 07899595604 for delivery updates.",
+    "expected_pii": [
+      {
+        "text": "07899595604",
+        "type": "PHONE"
+      }
+    ]
+  },
+  {
+    "text": "Pay via UPI to amit.gupta@apl for the order.",
+    "expected_pii": [
+      {
+        "text": "amit.gupta@apl",
+        "type": "UPI_ID"
+      }
+    ]
+  },
+  {
+    "text": "The agriculture sector contributed significantly to GDP growth.",
+    "expected_pii": []
+  },
+  {
+    "text": "DOB 13/07/1982 mentioned in the application.",
+    "expected_pii": [
+      {
+        "text": "13/07/1982",
+        "type": "DOB"
+      }
+    ]
+  },
+  {
+    "text": "My mobile number is 8861973435.",
+    "expected_pii": [
+      {
+        "text": "8861973435",
+        "type": "PHONE"
+      }
+    ]
+  },
+  {
+    "text": "Please verify PAN UCWJH1938H in the records.",
+    "expected_pii": [
+      {
+        "text": "UCWJH1938H",
+        "type": "PAN"
+      }
+    ]
+  },
+  {
+    "text": "Patient Vinay Gupta, DOB 10/06/1989, Aadhaar 5875 7177 5140, admitted today.",
+    "expected_pii": [
+      {
+        "text": "Vinay Gupta",
+        "type": "PERSON"
+      },
+      {
+        "text": "10/06/1989",
+        "type": "DOB"
+      },
+      {
+        "text": "5875 7177 5140",
+        "type": "AADHAAR"
+      }
+    ]
+  },
+  {
+    "text": "UPI handle: nikhil.saxena@okhdfcbank for quick transfers.",
+    "expected_pii": [
+      {
+        "text": "nikhil.saxena@okhdfcbank",
+        "type": "UPI_ID"
+      }
+    ]
+  },
+  {
+    "text": "Submit passport E5214415 copy for verification.",
+    "expected_pii": [
+      {
+        "text": "E5214415",
+        "type": "PASSPORT"
+      }
+    ]
+  },
+  {
+    "text": "Passport number T9880800 for visa application.",
+    "expected_pii": [
+      {
+        "text": "T9880800",
+        "type": "PASSPORT"
+      }
+    ]
+  },
+  {
+    "text": "Electoral ID: EES6970379 for verification.",
+    "expected_pii": [
+      {
+        "text": "EES6970379",
+        "type": "VOTER_ID"
+      }
+    ]
+  },
+  {
+    "text": "Email me at vinay.gupta@gmail.com for the contract.",
+    "expected_pii": [
+      {
+        "text": "vinay.gupta@gmail.com",
+        "type": "EMAIL"
+      }
+    ]
+  },
+  {
+    "text": "The government announced a new education policy for rural schools.",
+    "expected_pii": []
+  },
+  {
+    "text": "UPI ID pooja.mehta@oksbi registered for refunds.",
+    "expected_pii": [
+      {
+        "text": "pooja.mehta@oksbi",
+        "type": "UPI_ID"
+      }
+    ]
+  },
+  {
+    "text": "The new metro line will connect Whitefield to the airport.",
+    "expected_pii": []
+  },
+  {
+    "text": "Air quality index in Delhi showed improvement after rain.",
+    "expected_pii": []
+  },
+  {
+    "text": "My Aadhaar number is 9133 1509 8393.",
+    "expected_pii": [
+      {
+        "text": "9133 1509 8393",
+        "type": "AADHAAR"
+      }
+    ]
+  },
+  {
+    "text": "Digital payments volume in India surpassed 10 billion transactions.",
+    "expected_pii": []
+  },
+  {
+    "text": "Please verify card ending 4746149366888337.",
+    "expected_pii": [
+      {
+        "text": "4746149366888337",
+        "type": "CREDIT_CARD"
+      }
+    ]
+  },
+  {
+    "text": "Send OTP to 09485329247 for verification.",
+    "expected_pii": [
+      {
+        "text": "09485329247",
+        "type": "PHONE"
+      }
+    ]
+  },
+  {
+    "text": "Confirmation will be sent to amit_joshi@outlook.com.",
+    "expected_pii": [
+      {
+        "text": "amit_joshi@outlook.com",
+        "type": "EMAIL"
+      }
+    ]
+  },
+  {
+    "text": "Verify date of birth 04/07/1981 for the policy.",
+    "expected_pii": [
+      {
+        "text": "04/07/1981",
+        "type": "DOB"
+      }
+    ]
+  },
+  {
+    "text": "Submit driving licence UP-11-20210685306 as ID proof.",
+    "expected_pii": [
+      {
+        "text": "UP-11-20210685306",
+        "type": "DRIVING_LICENCE"
+      }
+    ]
+  },
+  {
+    "text": "Please verify card ending 5272315571086291.",
+    "expected_pii": [
+      {
+        "text": "5272315571086291",
+        "type": "CREDIT_CARD"
+      }
+    ]
+  },
+  {
+    "text": "Verify IFSC BARB0094F42 for the beneficiary.",
+    "expected_pii": [
+      {
+        "text": "BARB0094F42",
+        "type": "IFSC"
+      }
+    ]
+  },
+  {
+    "text": "Reach out on 09478274247 during business hours.",
+    "expected_pii": [
+      {
+        "text": "09478274247",
+        "type": "PHONE"
+      }
+    ]
+  },
+  {
+    "text": "Access logs show requests from 60.19.89.107.",
+    "expected_pii": [
+      {
+        "text": "60.19.89.107",
+        "type": "IP_ADDRESS"
+      }
+    ]
+  },
+  {
+    "text": "Please verify PAN BIDGF7540C in the records.",
+    "expected_pii": [
+      {
+        "text": "BIDGF7540C",
+        "type": "PAN"
+      }
+    ]
+  },
+  {
+    "text": "Verify DL MH-48-20218783944 in the Parivahan portal.",
+    "expected_pii": [
+      {
+        "text": "MH-48-20218783944",
+        "type": "DRIVING_LICENCE"
+      }
+    ]
+  },
+  {
+    "text": "UPI ID nikhil.mishra@okhdfcbank registered for refunds.",
+    "expected_pii": [
+      {
+        "text": "nikhil.mishra@okhdfcbank",
+        "type": "UPI_ID"
+      }
+    ]
+  },
+  {
+    "text": "Hospital ID UHID 7670326 assigned to the patient.",
+    "expected_pii": [
+      {
+        "text": "UHID 7670326",
+        "type": "MEDICAL_RECORD"
+      }
+    ]
+  },
+  {
+    "text": "Send the invoice copy to Sanjay Patel immediately.",
+    "expected_pii": [
+      {
+        "text": "Sanjay Patel",
+        "type": "PERSON"
+      }
+    ]
+  }
+]
