@@ -7,11 +7,12 @@ labels (DATE, NUMBER, CARDINAL) when they overlap — even partially.
 """
 
 from __future__ import annotations
+
 import logging
 from collections import defaultdict
 
 from app.models.schemas import DetectedEntity, EntitySummaryItem
-from app.pipeline import ner_detector, regex_detector, bert_classifier
+from app.pipeline import bert_classifier, ner_detector, regex_detector
 
 logger = logging.getLogger(__name__)
 

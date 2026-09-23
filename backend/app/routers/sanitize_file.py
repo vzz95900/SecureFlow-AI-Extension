@@ -4,13 +4,14 @@ POST /api/v1/sanitize-file — Upload a file (PDF, image, text, DOCX),
 extract text, detect & redact PII.
 """
 
-from fastapi import APIRouter, UploadFile, File, Form, HTTPException
 import logging
 
+from fastapi import APIRouter, File, Form, HTTPException, UploadFile
+
 from app.models.schemas import SanitizeFileResponse
+from app.pipeline.ocr_redactor import extract_text_from_image
 from app.pipeline.orchestrator import detect_all
 from app.pipeline.redactor import redact
-from app.pipeline.ocr_redactor import extract_text_from_image
 from app.utils.pdf_parser import extract_text_from_pdf
 from app.utils.token_map import token_map_manager
 
@@ -72,7 +73,7 @@ def _extract_docx_text(data: bytes) -> str:
     """Extract paragraphs from a .docx file using python-docx."""
     import io
     try:
-        from docx import Document   # python-docx
+        from docx import Document  # python-docx
     except ImportError:
         raise HTTPException(
             status_code=501,

@@ -2,9 +2,8 @@
 SecureFlow AI — Pydantic request/response schemas.
 """
 
-from pydantic import BaseModel, Field, PrivateAttr
-from typing import Optional
 
+from pydantic import BaseModel, Field, PrivateAttr
 
 # ── Shared ────────────────────────────────────────────────────────
 
@@ -31,7 +30,7 @@ class DetectedEntity(BaseModel):
 class SanitizeRequest(BaseModel):
     """POST /api/v1/sanitize request body."""
     text: str = Field(..., min_length=1, max_length=50_000)
-    session_id: Optional[str] = None
+    session_id: str | None = None
     sensitivity: str = Field(default="high", pattern="^(high|medium|low)$")
     redaction_mode: str = Field(default="xxx", pattern="^(token|xxx)$")
 

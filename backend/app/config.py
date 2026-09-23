@@ -3,9 +3,9 @@ SecureFlow AI — Application Configuration.
 Loads settings from environment variables / .env file.
 """
 
-from pydantic_settings import BaseSettings
-from pydantic import Field
 from functools import lru_cache
+
+from pydantic_settings import BaseSettings
 
 
 class Settings(BaseSettings):
@@ -45,7 +45,7 @@ class Settings(BaseSettings):
     }
 
 
-@lru_cache()
+@lru_cache
 def get_settings() -> Settings:
     """Return cached settings singleton."""
     return Settings()

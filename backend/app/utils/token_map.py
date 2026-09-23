@@ -3,10 +3,9 @@ SecureFlow AI — Reversible Token Map Manager.
 Stores PII ↔ token mappings per session, with TTL-based expiry.
 """
 
-import uuid
 import time
+import uuid
 from threading import Lock
-from typing import Optional
 
 from app.config import get_settings
 
@@ -19,7 +18,7 @@ class TokenMapManager:
         self._timestamps: dict[str, float] = {}
         self._lock = Lock()
 
-    def create_session(self, session_id: Optional[str] = None) -> str:
+    def create_session(self, session_id: str | None = None) -> str:
         """Create a new session and return its ID."""
         if not session_id:
             session_id = uuid.uuid4().hex[:16]
@@ -48,7 +47,7 @@ class TokenMapManager:
         with self._lock:
             return dict(self._store.get(session_id, {}))
 
-    def get_original(self, session_id: str, token: str) -> Optional[str]:
+    def get_original(self, session_id: str, token: str) -> str | None:
         """Look up the original text for a single token."""
         with self._lock:
             return self._store.get(session_id, {}).get(token)
