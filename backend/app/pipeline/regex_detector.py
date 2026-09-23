@@ -66,28 +66,33 @@ def _resolve_overlaps(entities: list[DetectedEntity]) -> list[DetectedEntity]:
 
     risk_order = {"HIGH": 3, "MEDIUM": 2, "LOW": 1}
 
-    # Sort by start, then by priority (ascending), then by span length (descending)
+    # Sort by priority first! Then span length, then risk level, then start
     entities.sort(key=lambda e: (
-        e.start,
         getattr(e, '_priority', _DEFAULT_PRIORITY),
         -(e.end - e.start),
         -risk_order.get(e.risk, 0),
+        e.start,
     ))
 
     resolved: list[DetectedEntity] = []
-    last_end = -1
 
     for entity in entities:
-        if entity.start >= last_end:
+        # Check if entity overlaps with any already resolved entity
+        overlap = False
+        for r in resolved:
+            if max(entity.start, r.start) < min(entity.end, r.end):
+                overlap = True
+                break
+        
+        if not overlap:
             resolved.append(entity)
-            last_end = entity.end
         else:
-            # Overlap detected — the earlier entity was already added and
-            # has higher priority (or was longer / higher risk), so skip this one.
             logger.debug(
                 f"Overlap resolved: kept previous, skipped {entity.type}={entity.text!r}"
             )
 
+    # Re-sort resolved entities by start index to maintain original order
+    resolved.sort(key=lambda e: e.start)
     return resolved
 
 
