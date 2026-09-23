@@ -3,10 +3,11 @@ SecureFlow AI — SQLAlchemy database models.
 Stores audit log entries for redaction sessions.
 """
 
-from sqlalchemy import Column, String, Integer, Float, DateTime, Text, JSON
+from datetime import UTC, datetime
+
+from sqlalchemy import JSON, Column, DateTime, Integer, String
+from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
 from sqlalchemy.orm import DeclarativeBase
-from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker, AsyncSession
-from datetime import datetime, timezone
 
 from app.config import get_settings
 
@@ -22,7 +23,7 @@ class AuditLog(Base):
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     session_id = Column(String(64), index=True, nullable=False)
-    timestamp = Column(DateTime, default=lambda: datetime.now(timezone.utc), nullable=False)
+    timestamp = Column(DateTime, default=lambda: datetime.now(UTC), nullable=False)
     entities_found = Column(Integer, default=0)
     risk_level = Column(String(10), default="LOW")
     entity_summary = Column(JSON, default=list)

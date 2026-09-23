@@ -7,11 +7,11 @@ Without a trained model, it falls back to rule-based risk assignment.
 """
 
 from __future__ import annotations
-import logging
-from typing import Optional
 
-from app.models.schemas import DetectedEntity
+import logging
+
 from app.config import get_settings
+from app.models.schemas import DetectedEntity
 
 logger = logging.getLogger(__name__)
 
@@ -36,8 +36,7 @@ def _load_model():
     model_path = settings.bert_model_path
 
     try:
-        from transformers import AutoTokenizer, AutoModelForSequenceClassification
-        import torch
+        from transformers import AutoModelForSequenceClassification, AutoTokenizer
 
         _tokenizer = AutoTokenizer.from_pretrained(model_path)
         _model = AutoModelForSequenceClassification.from_pretrained(model_path)
@@ -88,6 +87,9 @@ def _predict_risk(text: str, context: str = "") -> tuple[str, float]:
         (risk_label, confidence)
     """
     import torch
+
+    if _tokenizer is None or _model is None:
+        raise RuntimeError("BERT model is not loaded")
 
     input_text = f"{context} [SEP] {text}" if context else text
     inputs = _tokenizer(

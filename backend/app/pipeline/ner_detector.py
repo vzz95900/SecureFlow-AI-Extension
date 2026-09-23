@@ -4,11 +4,11 @@ Detects named entities (PERSON, ORG, GPE, DATE, etc.) using spaCy.
 """
 
 from __future__ import annotations
-import logging
-from typing import Optional
 
-from app.models.schemas import DetectedEntity
+import logging
+
 from app.config import get_settings
+from app.models.schemas import DetectedEntity
 
 logger = logging.getLogger(__name__)
 

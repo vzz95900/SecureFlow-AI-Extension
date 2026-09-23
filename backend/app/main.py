@@ -3,16 +3,16 @@ SecureFlow AI — FastAPI Application Entry Point.
 Configures CORS, rate limiting, routes, and startup events.
 """
 
-from contextlib import asynccontextmanager
 import logging
+from contextlib import asynccontextmanager
 
-from fastapi import FastAPI, Request, HTTPException, Depends
+from fastapi import Depends, FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from app.config import get_settings
 from app.models.db import init_db
-from app.routers import health, sanitize, restore, sanitize_file
+from app.routers import health, restore, sanitize, sanitize_file
 
 # ── Logging ───────────────────────────────────────────────────────
 

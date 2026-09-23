@@ -3,8 +3,9 @@ SecureFlow AI — Restore Router.
 POST /api/v1/restore — Reinject original PII into LLM response.
 """
 
-from fastapi import APIRouter, HTTPException
 import logging
+
+from fastapi import APIRouter, HTTPException
 
 from app.models.schemas import RestoreRequest, RestoreResponse
 from app.pipeline.redactor import restore

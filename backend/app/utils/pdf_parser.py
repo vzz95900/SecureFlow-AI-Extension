@@ -4,8 +4,6 @@ Uses PyMuPDF (fitz) for PDF parsing, with OCR fallback.
 """
 
 from __future__ import annotations
-import io
-from typing import Optional
 
 try:
     import fitz  # PyMuPDF
@@ -57,7 +55,7 @@ def extract_text_from_pdf(pdf_bytes: bytes) -> dict:
     }
 
 
-def extract_text_from_image_bytes(image_bytes: bytes) -> Optional[str]:
+def extract_text_from_image_bytes(image_bytes: bytes) -> str | None:
     """
     Placeholder for OCR extraction from raw image bytes.
     Actual OCR is handled by ocr_redactor.py in the pipeline.

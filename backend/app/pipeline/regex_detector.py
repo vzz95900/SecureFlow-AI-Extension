@@ -5,9 +5,10 @@ Includes priority-based overlap resolution to prevent misclassification.
 """
 
 from __future__ import annotations
+
 import json
-import re
 import logging
+import re
 from pathlib import Path
 
 from app.models.schemas import DetectedEntity
@@ -31,7 +32,7 @@ def _load_patterns():
         logger.warning(f"Regex patterns file not found: {pattern_file}")
         return []
 
-    with open(pattern_file, "r", encoding="utf-8") as f:
+    with open(pattern_file, encoding="utf-8") as f:
         data = json.load(f)
 
     _patterns = data.get("patterns", [])
@@ -83,7 +84,7 @@ def _resolve_overlaps(entities: list[DetectedEntity]) -> list[DetectedEntity]:
             if max(entity.start, r.start) < min(entity.end, r.end):
                 overlap = True
                 break
-        
+
         if not overlap:
             resolved.append(entity)
         else:

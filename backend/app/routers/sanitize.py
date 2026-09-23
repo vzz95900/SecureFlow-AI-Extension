@@ -3,8 +3,9 @@ SecureFlow AI — Sanitize Router.
 POST /api/v1/sanitize — Detect and redact PII from text.
 """
 
-from fastapi import APIRouter, HTTPException
 import logging
+
+from fastapi import APIRouter, HTTPException
 
 from app.models.schemas import SanitizeRequest, SanitizeResponse
 from app.pipeline.orchestrator import detect_all

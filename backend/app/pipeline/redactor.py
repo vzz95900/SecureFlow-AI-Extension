@@ -4,6 +4,7 @@ Replaces detected entities with reversible tokens (or XXX masks) and handles res
 """
 
 from __future__ import annotations
+
 from app.models.schemas import DetectedEntity
 
 

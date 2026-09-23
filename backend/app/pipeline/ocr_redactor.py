@@ -7,8 +7,8 @@ NOTE: Requires Tesseract to be installed on the system.
 """
 
 from __future__ import annotations
+
 import logging
-from typing import Optional
 
 logger = logging.getLogger(__name__)
 
@@ -39,7 +39,10 @@ def _check_paddle() -> bool:
     if _paddle_available is not None:
         return _paddle_available
     try:
-        from paddleocr import PaddleOCR
+        import importlib.util
+
+        if importlib.util.find_spec("paddleocr") is None:
+            raise ImportError
         _paddle_available = True
         logger.info("PaddleOCR available")
     except ImportError:
@@ -91,21 +94,23 @@ async def extract_text_from_image(image_bytes: bytes) -> str:
 
 def _tesseract_extract(image_bytes: bytes) -> str:
     """Extract text using Tesseract."""
+    import io
+
     import pytesseract
     from PIL import Image
-    import io
 
     image = Image.open(io.BytesIO(image_bytes))
     text = pytesseract.image_to_string(image)
-    return text
+    return str(text)
 
 
 def _paddle_extract(image_bytes: bytes) -> str:
     """Extract text using PaddleOCR."""
-    from paddleocr import PaddleOCR
-    import numpy as np
-    from PIL import Image
     import io
+
+    import numpy as np
+    from paddleocr import PaddleOCR
+    from PIL import Image
 
     ocr = PaddleOCR(use_angle_cls=True, lang="en", show_log=False)
     image = Image.open(io.BytesIO(image_bytes))
