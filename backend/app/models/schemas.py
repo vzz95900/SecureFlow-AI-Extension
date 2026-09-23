@@ -2,7 +2,7 @@
 SecureFlow AI — Pydantic request/response schemas.
 """
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, PrivateAttr
 from typing import Optional
 
 
@@ -23,6 +23,7 @@ class DetectedEntity(BaseModel):
     text: str           # original text span
     risk: str = "HIGH"  # HIGH | MEDIUM | LOW
     source: str = ""    # "ner" | "regex" | "bert"
+    _priority: int = PrivateAttr(default=50)
 
 
 # ── Sanitize ──────────────────────────────────────────────────────
